@@ -1098,6 +1098,150 @@
     line-height: 1.6;
   }
 
+  /* camp-hero: FVと同構造 */
+  .camp-hero {
+    background: var(--docomo-red);
+    border-radius: 14px;
+    padding: 24px 20px 20px;
+    position: relative;
+    margin-top: 8px;
+  }
+  .camp-hero-base {
+    text-align: center;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 900;
+    font-size: 22px;
+    color: white;
+    line-height: 1.2;
+    margin-bottom: 6px;
+  }
+  .camp-hero-base .hl-num {
+    font-size: 48px;
+    color: #ffe600;
+    -webkit-text-stroke: 2px #000;
+    text-stroke: 2px #000;
+    vertical-align: -6px;
+    margin: 0 2px;
+  }
+  .camp-hero-base .ast {
+    font-size: 14px;
+    vertical-align: super;
+  }
+  .camp-hero-base-note {
+    font-size: 10px;
+    color: rgba(255,255,255,0.75);
+    text-align: center;
+    margin-bottom: 16px;
+    line-height: 1.5;
+    border-left: 2px solid #ffe600;
+    padding-left: 8px;
+    text-align: left;
+  }
+  .camp-divider {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffe600;
+    margin-bottom: 12px;
+    letter-spacing: 0.05em;
+  }
+  .camp-hero-row {
+    background: rgba(255,255,255,0.12);
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-bottom: 8px;
+  }
+  .camp-hero-row.featured {
+    background: #ffe600;
+  }
+  .camp-hero-row-tag {
+    font-size: 10px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 4px;
+    background: rgba(255,255,255,0.2);
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 20px;
+  }
+  .camp-hero-row.featured .camp-hero-row-tag {
+    color: var(--ink);
+    background: rgba(0,0,0,0.12);
+  }
+  .camp-hero-row-result {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+    color: white;
+    line-height: 1.2;
+    margin: 4px 0;
+  }
+  .camp-hero-row.featured .camp-hero-row-result {
+    color: var(--ink);
+  }
+  .camp-hero-row-result .num {
+    font-size: 48px;
+    color: #ffe600;
+    -webkit-text-stroke: 2px #000;
+    text-stroke: 2px #000;
+    vertical-align: -6px;
+    margin-right: 2px;
+  }
+  .camp-hero-row.featured .camp-hero-row-result .num {
+    color: var(--docomo-red);
+    -webkit-text-stroke: 1px rgba(0,0,0,0.2);
+  }
+  .camp-hero-row-result .unit {
+    font-size: 20px;
+  }
+  .camp-hero-row-formula {
+    font-size: 11px;
+    color: rgba(255,255,255,0.7);
+    margin-top: 2px;
+  }
+  .camp-hero-row.featured .camp-hero-row-formula {
+    color: rgba(0,0,0,0.55);
+  }
+  .camp-hero-meta {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+  }
+  .camp-hero-plans {
+    font-size: 10px;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 4px;
+  }
+  .camp-hero-note {
+    font-size: 10px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.6;
+  }
+  .camp-cond {
+    background: white;
+    color: var(--docomo-red);
+    text-align: center;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 12px;
+  }
+  .camp-cta {
+    display: block;
+    background: white;
+    color: var(--docomo-red);
+    text-align: center;
+    padding: 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 900;
+    font-size: 17px;
+    margin-top: 16px;
+    letter-spacing: 0.04em;
+  }
+
   /* ============ FINAL CTA ============ */
   .final {
     background: var(--paper);
@@ -1246,9 +1390,16 @@
     font-weight: 900;
     font-size: 15px;
   }
+  .sticky-note {
+    font-size: 10px;
+    color: #666;
+    text-align: center;
+    margin-top: 6px;
+    line-height: 1.5;
+  }
 
   /* padding for sticky */
-  .spacer { height: 80px; }
+  .spacer { height: 110px; }
 
   /* responsive */
   @media (min-width: 481px) {
@@ -1623,43 +1774,45 @@
   <!-- ============ CAMPAIGN ============ -->
   <section class="campaign" id="apply">
     <span class="section-label">キャンペーン</span>
-    <h2 class="campaign-title">
-      今なら、<br>
-      <span class="hl">誰でも2カ月</span>実質無料。
-    </h2>
 
-    <div class="plan-cards">
-      <div class="plan-card featured">
-        <div class="plan-card-left">
-          <div class="plan-result"><span class="big">3</span>カ月</div>
-          <div class="plan-formula">実質無料</div>
-        </div>
-        <div class="plan-card-right">
-          <div class="plan-tag">対象プランご契約なら</div>
-          <div class="plan-plans">ドコモMAX・ポイ活MAX・<br>ポイ活20・mini・ahamo</div>
-        </div>
+    <div class="camp-hero">
+      <div class="camp-hero-base">
+        初回<span class="hl-num">31</span>日間無料<span class="ast">※</span>
       </div>
-      <div class="plan-card">
-        <div class="plan-card-left">
-          <div class="plan-result"><span class="big">2</span>カ月</div>
-          <div class="plan-formula">実質無料</div>
+      <div class="camp-hero-base-note">※31日経過後は自動継続となり、ドコモ以外の方はその月から1カ月分の料金（月額税込550円）がかかります。</div>
+
+      <div class="camp-divider">さらにエントリーで</div>
+
+      <div class="camp-hero-row">
+        <div class="camp-hero-row-tag">誰でも</div>
+        <div class="camp-hero-row-result">
+          <span class="num">2</span><span class="unit">カ月</span>実質無料
         </div>
-        <div class="plan-card-right">
-          <div class="plan-tag">上記以外 / ドコモ回線なし</div>
-          <div class="plan-plans">どなたでもお申し込みOK</div>
+        <div class="camp-hero-row-formula">初回31日間無料 ＋ 550pt</div>
+      </div>
+
+      <div class="camp-hero-row featured">
+        <div class="camp-hero-row-tag">対象プランご契約なら</div>
+        <div class="camp-hero-row-result">
+          <span class="num">3</span><span class="unit">カ月</span>実質無料
+        </div>
+        <div class="camp-hero-row-formula">初回31日間無料 ＋ 550pt ＋ 550pt</div>
+      </div>
+
+      <div class="camp-hero-meta">
+        <div class="camp-hero-plans">対象プラン：ドコモMAX・ポイ活MAX・ポイ活20・mini・ahamo</div>
+        <div class="camp-hero-note">
+          要エントリー／還元はdポイント(期間・用途限定)<br>
+          終了時期未定のため、予告なく終了となる場合があります
         </div>
       </div>
     </div>
 
-    <p class="campaign-note">※要エントリー。還元はdポイント(期間・用途限定)。キャンペーン期間：2026年3月1日〜終了時期未定</p>
-  </section>
+    <div class="camp-cond">
+      <strong>ドコモ回線をお持ちでない方もOK</strong>
+    </div>
 
-  <!-- ============ FINAL CTA ============ -->
-  <section class="final">
-    <h2 class="final-title">まずは、<br>無料で試してみる。</h2>
-    <p class="final-sub">月額550円(税込)／いつでも解約可能</p>
-    <a href="#" class="final-cta">dバリューパスを申し込む</a>
-    <p class="final-note">※申込ページに移動します</p>
+    <a href="#" class="camp-cta">今すぐ申し込む</a>
   </section>
 
   <!-- ============ FAQ ============ -->
@@ -1699,7 +1852,8 @@
 
   <!-- Sticky CTA -->
   <div class="sticky-cta" id="stickyCta">
-    <a href="#apply">月550円で申し込む →</a>
+    <a href="#apply">今すぐ申し込む</a>
+    <p class="sticky-note">初回31日間無料 ※31日経過後は自動継続となり、ドコモ以外の方はその月から1カ月分の料金（月額税込550円）がかかります。<br>キャンペーンにエントリーしていただくことで、2ヶ月あるいは3ヶ月の実質無料。</p>
   </div>
 
 </div>
