@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>dバリューパス｜モバイルバッテリー借り放題</title>
+  <meta name="description" content="月額税込550円。モバイルバッテリー借り放題、ナビタイム乗換案内、ウェザーニュース ゲリラ豪雨通知、クーポン、dポイント特典まで。初回31日間無料。" />
+  <style>
+    :root {
+      --red: #d71920;
+      --red-dark: #a9001d;
+      --red-deep: #880018;
+      --red-soft: #fff1f3;
+      --pink-soft: #fff6f8;
+      --blue: #005bac;
+      --blue-dark: #003f83;
+      --blue-soft: #eef7ff;
+      --green: #18833d;
+      --green-soft: #edf9f1;
+      --gold: #b98618;
+      --gold-soft: #fff7dc;
+      --yellow: #ffd42a;
+      --ink: #111217;
+      --gray: #5e6570;
+      --light-gray: #f4f6f8;
+      --line: #e7eaf0;
+      --white: #fff;
+      --shadow-sm: 0 5px 14px rgba(17, 18, 23, .08);
+      --shadow-md: 0 12px 32px rgba(17, 18, 23, .14);
+      --shadow-red: 0 12px 28px rgba(215, 25, 32, .30);
+      --radius-xl: 24px;
+      --radius-lg: 18px;
+      --radius-md: 14px;
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    * { box-sizing: border-box; }
+    html { background: #f1f2f5; scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: #f1f2f5;
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "YuGothic", Meiryo, sans-serif;
+      line-height: 1.55;
+      letter-spacing: .01em;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .page {
+      width: 100%;
+      max-width: 430px;
+      margin: 0 auto;
+      background: #fff;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 0 0 1px rgba(0,0,0,.06), 0 20px 80px rgba(0,0,0,.14);
+    }
+
+    .section { padding: 32px 14px; }
+    .section-head { text-align: center; margin-bottom: 16px; }
+    .section-title {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.28;
+      font-weight: 950;
+      letter-spacing: -.045em;
+    }
+    .section-title .red { color: var(--red); }
+    .section-title .blue { color: var(--blue); }
+    .section-title .gold { color: var(--gold); }
+    .section-sub {
+      margin: 8px 0 0;
+      color: var(--gray);
+      font-size: 12px;
+      font-weight: 750;
+      line-height: 1.7;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 26px;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: var(--red-soft);
+      color: var(--red);
+      font-size: 11px;
+      font-weight: 950;
+      margin-bottom: 8px;
+      letter-spacing: .04em;
+    }
+    .note {
+      margin: 8px 0 0;
+      color: #777e89;
+      font-size: 9px;
+      line-height: 1.55;
+      text-align: center;
+      font-weight: 650;
+    }
+
+    .hero {
+      padding: 10px 13px 18px;
+      background:
+        radial-gradient(circle at 91% 13%, rgba(255, 212, 42, .58) 0%, rgba(255, 212, 42, .18) 26%, transparent 40%),
+        radial-gradient(circle at 4% 72%, rgba(215,25,32,.12) 0%, transparent 35%),
+        linear-gradient(180deg, #fff 0%, #fff9fa 62%, #fff 100%);
+      position: relative;
+      border-top: 3px solid var(--red);
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(215,25,32,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(215,25,32,.035) 1px, transparent 1px);
+      background-size: 24px 24px;
+      mask-image: linear-gradient(180deg, rgba(0,0,0,.55), transparent 72%);
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; z-index: 1; }
+    .logo-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 11px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: var(--red);
+      font-weight: 950;
+      font-size: 19px;
+      letter-spacing: -.04em;
+      line-height: 1;
+    }
+    .logo-d {
+      font-size: 34px;
+      font-weight: 950;
+      font-style: italic;
+      letter-spacing: -.12em;
+    }
+    .top-pill {
+      background: #111;
+      color: #fff;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 10px;
+      font-weight: 950;
+      white-space: nowrap;
+    }
+    .business-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--yellow);
+      color: #111;
+      border-radius: 10px;
+      border: 2px solid #111;
+      box-shadow: 3px 3px 0 #111;
+      padding: 7px 12px;
+      font-size: 13px;
+      font-weight: 950;
+      transform: rotate(-1deg);
+    }
+    .hero-title {
+      margin: 14px 0 0;
+      font-weight: 950;
+      font-size: 31px;
+      line-height: 1.13;
+      letter-spacing: -.06em;
+    }
+    .hero-title .red-main {
+      display: block;
+      color: var(--red);
+      font-size: 54px;
+      line-height: 1;
+      text-shadow: 0 4px 0 rgba(215,25,32,.10);
+    }
+    .hero-copy {
+      margin: 9px 0 0;
+      color: #2f333a;
+      font-size: 13px;
+      line-height: 1.65;
+      font-weight: 850;
+    }
+    .price-area {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      align-items: end;
+      gap: 10px;
+      margin: 12px 0 8px;
+    }
+    .monthly-box {
+      border: 2px solid var(--red);
+      color: var(--red);
+      background: #fff;
+      border-radius: 12px;
+      padding: 8px 4px;
+      text-align: center;
+      font-weight: 950;
+      font-size: 20px;
+      line-height: 1.12;
+      box-shadow: var(--shadow-sm);
+    }
+    .monthly-box small {
+      display: block;
+      font-size: 10px;
+      margin-top: 2px;
+    }
+    .price-main {
+      color: var(--red);
+      font-weight: 950;
+      line-height: .88;
+      letter-spacing: -.08em;
+      white-space: nowrap;
+    }
+    .price-main .num { font-size: 72px; }
+    .price-main .tax { font-size: 13px; letter-spacing: 0; vertical-align: 22px; margin-left: 2px; }
+    .price-main .yen { font-size: 28px; letter-spacing: -.03em; }
+    .free-ribbon {
+      position: relative;
+      margin: 8px 0 12px;
+      background: linear-gradient(180deg, #ff3152 0%, var(--red) 58%, var(--red-dark) 100%);
+      color: #fff;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 21px;
+      font-weight: 950;
+      padding: 8px 12px;
+      box-shadow: var(--shadow-red);
+    }
+    .free-ribbon::before,
+    .free-ribbon::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 20px;
+      height: 20px;
+      background: #fff9fa;
+      border-radius: 50%;
+      transform: translateY(-50%);
+    }
+    .free-ribbon::before { left: -10px; }
+    .free-ribbon::after { right: -10px; }
+
+    .hero-visual {
+      position: relative;
+      min-height: 230px;
+      margin: 10px 0 12px;
+    }
+    .business-photo {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 132px;
+      height: 195px;
+      border-radius: 24px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.78)),
+        linear-gradient(135deg, #dceeff, #ffffff 55%, #f1f4f8);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      border: 1px solid rgba(17,18,23,.06);
+    }
+    .business-photo::before {
+      content: "👨‍💼";
+      position: absolute;
+      inset: 14px 0 auto;
+      text-align: center;
+      font-size: 98px;
+      filter: drop-shadow(0 8px 12px rgba(0,0,0,.16));
+    }
+    .business-photo::after {
+      content: "外回り・出張にも";
+      position: absolute;
+      left: 8px;
+      right: 8px;
+      bottom: 9px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.92);
+      padding: 5px 4px;
+      text-align: center;
+      font-size: 9.5px;
+      font-weight: 950;
+      box-shadow: 0 5px 12px rgba(0,0,0,.08);
+    }
+    .phone-mock {
+      position: absolute;
+      left: 126px;
+      top: 8px;
+      width: 92px;
+      height: 174px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, #f9284e, #c80025);
+      border: 6px solid #111217;
+      box-shadow: 0 16px 28px rgba(0,0,0,.22);
+      transform: rotate(-6deg);
+      overflow: hidden;
+      z-index: 4;
+    }
+    .phone-mock::before {
+      content: "";
+      position: absolute;
+      top: -1px;
+      left: 50%;
+      width: 44px;
+      height: 11px;
+      transform: translateX(-50%);
+      border-radius: 0 0 9px 9px;
+      background: #111217;
+    }
+    .phone-d {
+      position: absolute;
+      top: 43px;
+      left: 0;
+      right: 0;
+      color: #fff;
+      text-align: center;
+      font-size: 48px;
+      font-weight: 950;
+      font-style: italic;
+      line-height: 1;
+    }
+    .phone-name {
+      position: absolute;
+      top: 93px;
+      left: 0;
+      right: 0;
+      color: #fff;
+      text-align: center;
+      font-size: 8px;
+      font-weight: 950;
+    }
+    .phone-icon {
+      position: absolute;
+      width: 30px;
+      height: 28px;
+      border-radius: 9px;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 17px;
+      box-shadow: 0 4px 10px rgba(0,0,0,.18);
+    }
+    .phone-icon.ticket { left: 10px; bottom: 36px; transform: rotate(-10deg); }
+    .phone-icon.coin { right: 8px; bottom: 26px; color: var(--gold); border-radius: 50%; }
+
+    .charge-mock {
+      position: absolute;
+      left: 214px;
+      bottom: 8px;
+      width: 84px;
+      height: 158px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, #ffffff, #e9eef4);
+      border: 1px solid #d7dde6;
+      box-shadow: 0 15px 28px rgba(0,0,0,.16);
+      transform: rotate(4deg);
+      z-index: 3;
+    }
+    .charge-mock::before {
+      content: "";
+      position: absolute;
+      top: 18px;
+      left: 22px;
+      right: 22px;
+      height: 8px;
+      border-radius: 99px;
+      background: repeating-linear-gradient(90deg, #18aee7 0 5px, transparent 5px 9px);
+    }
+    .charge-mock::after {
+      content: "CHARGE\A SPOT";
+      white-space: pre;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      right: 0;
+      color: #19a8dc;
+      text-align: center;
+      font-weight: 950;
+      font-size: 10px;
+      line-height: 1.05;
+    }
+    .hero-copy-card {
+      position: absolute;
+      left: 0;
+      bottom: 4px;
+      width: 124px;
+      background: #fff;
+      border: 1px solid #f0c8ce;
+      border-radius: 18px;
+      box-shadow: var(--shadow-sm);
+      padding: 12px 10px;
+    }
+    .hero-copy-card strong {
+      color: var(--red);
+      display: block;
+      font-size: 18px;
+      line-height: 1.2;
+      font-weight: 950;
+      letter-spacing: -.04em;
+    }
+    .hero-copy-card span {
+      display: block;
+      margin-top: 6px;
+      color: var(--gray);
+      font-size: 10px;
+      font-weight: 800;
+      line-height: 1.45;
+    }
+    .yellow-badge {
+      position: absolute;
+      right: 0;
+      bottom: 14px;
+      z-index: 6;
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 34% 20%, #fff575 0%, #ffd52e 56%, #f4b000 100%);
+      border: 3px solid #e2a900;
+      box-shadow: 0 10px 22px rgba(0,0,0,.20);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      font-size: 12px;
+      line-height: 1.22;
+      font-weight: 950;
+      color: #111;
+      transform: rotate(-7deg);
+    }
+    .yellow-badge b {
+      display: inline;
+      color: var(--red);
+      font-size: 24px;
+      letter-spacing: -.04em;
+    }
+
+    .hero-features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      margin: 10px 0 13px;
+    }
+    .feature-chip {
+      background: #fff;
+      border: 1px solid #f0cdd2;
+      border-radius: 13px;
+      min-height: 78px;
+      box-shadow: 0 5px 14px rgba(215,25,32,.07);
+      padding: 8px 3px 6px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      font-size: 9.5px;
+      line-height: 1.22;
+      font-weight: 950;
+    }
+    .feature-chip .icon {
+      font-size: 23px;
+      line-height: 1;
+    }
+    .feature-chip .red { color: var(--red); }
+    .feature-chip .blue { color: var(--blue); }
+    .feature-chip .green { color: var(--green); }
+    .feature-chip .gold { color: var(--gold); }
+
+    .cta-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 56px;
+      width: 100%;
+      border: 0;
+      border-radius: 16px;
+      background: linear-gradient(180deg, #ff3154 0%, var(--red) 52%, var(--red-dark) 100%);
+      color: #fff;
+      font-size: 20px;
+      font-weight: 950;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.35), 0 7px 0 #8c0018, var(--shadow-red);
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-btn::after {
+      content: "›";
+      position: absolute;
+      right: 18px;
+      top: 50%;
+      transform: translateY(-52%);
+      font-size: 36px;
+      line-height: 1;
+    }
+    .cta-btn::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 -38%;
+      width: 34%;
+      transform: skewX(-20deg);
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.28), transparent);
+      animation: shine 4.2s infinite;
+    }
+    @keyframes shine { 0%, 48% { left: -40%; } 62%, 100% { left: 112%; } }
+
+    .campaign {
+      padding: 24px 12px 26px;
+      background:
+        radial-gradient(circle at 18% 8%, rgba(255,212,42,.20), transparent 34%),
+        linear-gradient(180deg, #e4002b 0%, #bd001f 100%);
+      color: #fff;
+    }
+    .campaign-title {
+      margin: 0 0 13px;
+      text-align: center;
+      font-size: 25px;
+      font-weight: 950;
+      line-height: 1.25;
+      letter-spacing: -.04em;
+    }
+    .campaign-title::before { content: "＼ "; }
+    .campaign-title::after { content: " ／"; }
+    .campaign-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .campaign-card {
+      background: #fff;
+      color: var(--ink);
+      border-radius: 18px;
+      min-height: 160px;
+      padding: 12px 8px 11px;
+      text-align: center;
+      box-shadow: 0 12px 28px rgba(0,0,0,.20);
+      position: relative;
+      overflow: hidden;
+    }
+    .campaign-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(215,25,32,.10), transparent 54%);
+    }
+    .campaign-card.gold::before { background: linear-gradient(135deg, rgba(185,134,24,.16), transparent 54%); }
+    .campaign-card > * { position: relative; }
+    .campaign-label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 24px;
+      padding: 0 10px;
+      border: 1px solid currentColor;
+      border-radius: 999px;
+      color: var(--red);
+      font-size: 11px;
+      font-weight: 950;
+    }
+    .gold .campaign-label { color: var(--gold); }
+    .campaign-month {
+      margin: 11px 0 6px;
+      color: var(--red);
+      font-size: 39px;
+      line-height: .92;
+      font-weight: 950;
+      letter-spacing: -.07em;
+    }
+    .gold .campaign-month { color: var(--gold); }
+    .campaign-month span {
+      display: block;
+      margin-top: 5px;
+      font-size: 24px;
+      line-height: 1.05;
+    }
+    .campaign-point {
+      font-size: 10px;
+      font-weight: 850;
+      line-height: 1.45;
+      color: #30343b;
+    }
+    .campaign .note { color: rgba(255,255,255,.82); }
+
+    .business-section {
+      background: linear-gradient(180deg, #fff 0%, #f4faff 100%);
+      padding: 30px 14px 32px;
+    }
+    .business-title {
+      margin: 0 0 14px;
+      text-align: center;
+      color: var(--blue-dark);
+      font-size: 22px;
+      line-height: 1.35;
+      font-weight: 950;
+      letter-spacing: -.04em;
+    }
+    .business-title .red { color: var(--red); }
+    .business-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+    }
+    .business-card {
+      background: #fff;
+      border: 1px solid #dce8f5;
+      border-radius: 18px;
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+    }
+    .business-card-head {
+      padding: 12px 10px 8px;
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 8px;
+      align-items: center;
+    }
+    .business-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-size: 24px;
+      font-weight: 950;
+    }
+    .business-icon.train { background: var(--green); }
+    .business-icon.weather { background: var(--blue); }
+    .business-card h3 {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.25;
+      font-weight: 950;
+      letter-spacing: -.035em;
+    }
+    .business-card.train h3 { color: var(--green); }
+    .business-card.weather h3 { color: var(--blue); }
+    .business-card p {
+      margin: 0;
+      padding: 0 10px 11px;
+      color: #3e4652;
+      font-size: 10.5px;
+      line-height: 1.65;
+      font-weight: 750;
+    }
+    .business-photo-mini {
+      height: 72px;
+      margin: 0 10px 10px;
+      border-radius: 13px;
+      background: linear-gradient(135deg, #e5f1ff, #fff);
+      position: relative;
+      overflow: hidden;
+    }
+    .business-photo-mini.train::before { content: "🚆"; position: absolute; left: 8px; top: 16px; font-size: 38px; }
+    .business-photo-mini.weather::before { content: "☔"; position: absolute; left: 8px; top: 14px; font-size: 40px; }
+    .business-photo-mini::after {
+      content: "👨‍💼";
+      position: absolute;
+      right: 6px;
+      bottom: -8px;
+      font-size: 56px;
+      filter: drop-shadow(0 6px 8px rgba(0,0,0,.12));
+    }
+
+    .battery-section {
+      padding: 30px 14px;
+      background: #fff;
+    }
+    .battery-panel {
+      border: 1px solid #dbe8f4;
+      border-radius: 22px;
+      box-shadow: var(--shadow-sm);
+      padding: 16px 12px 13px;
+      background:
+        radial-gradient(circle at 45% 30%, rgba(0,91,172,.10), transparent 36%),
+        #fff;
+      overflow: hidden;
+    }
+    .battery-heading {
+      margin: 0 0 12px;
+      text-align: center;
+      color: var(--blue-dark);
+      font-size: 19px;
+      line-height: 1.35;
+      font-weight: 950;
+      letter-spacing: -.035em;
+    }
+    .battery-top {
+      display: grid;
+      grid-template-columns: 1fr 1.18fr;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .battery-number {
+      color: var(--blue);
+      font-weight: 950;
+      line-height: .95;
+      letter-spacing: -.06em;
+    }
+    .battery-number small {
+      display: block;
+      font-size: 15px;
+      letter-spacing: 0;
+      margin-bottom: 2px;
+    }
+    .battery-number .num { font-size: 56px; }
+    .battery-points {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+    }
+    .battery-point {
+      background: rgba(255,255,255,.92);
+      border: 1px solid #dce8f4;
+      border-radius: 50%;
+      aspect-ratio: 1 / 1;
+      box-shadow: 0 5px 12px rgba(0,91,172,.10);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      font-size: 8.5px;
+      line-height: 1.2;
+      font-weight: 950;
+      color: #313841;
+    }
+    .battery-point span {
+      display: block;
+      font-size: 22px;
+      line-height: 1;
+      margin-bottom: 3px;
+    }
+    .fee-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 0 1px #e0e6ee;
+      font-size: 10px;
+    }
+    .fee-table th,
+    .fee-table td {
+      border-bottom: 1px solid #e0e6ee;
+      padding: 7px 4px;
+      text-align: center;
+      font-weight: 850;
+    }
+    .fee-table th { background: #f6f8fb; color: #66707c; }
+    .fee-table tr:last-child td { border-bottom: 0; }
+    .fee-table .zero {
+      color: var(--red);
+      font-size: 15px;
+      font-weight: 950;
+    }
+
+    .benefits-section {
+      padding: 28px 14px 30px;
+      background: linear-gradient(180deg, #fff 0%, #fff6f7 100%);
+    }
+    .benefits-title {
+      margin: 0 0 14px;
+      text-align: center;
+      color: var(--red);
+      font-size: 23px;
+      font-weight: 950;
+      letter-spacing: -.04em;
+    }
+    .benefits-title::before { content: "🎁 "; }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+    .benefit-card {
+      min-height: 118px;
+      background: #fff;
+      border: 1px solid #f0d9dc;
+      border-radius: 16px;
+      box-shadow: 0 5px 14px rgba(215,25,32,.07);
+      padding: 9px 5px 8px;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+    .benefit-card::before {
+      content: "";
+      position: absolute;
+      top: -38px;
+      right: -32px;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba(215,25,32,.05);
+    }
+    .benefit-icon { position: relative; font-size: 32px; line-height: 1; margin: 2px 0 8px; }
+    .benefit-card h3 {
+      position: relative;
+      margin: 0;
+      font-size: 11.2px;
+      line-height: 1.25;
+      font-weight: 950;
+      letter-spacing: -.03em;
+    }
+    .benefit-card b { color: var(--red); font-size: 14px; }
+    .benefit-card.blue b { color: var(--blue); }
+    .benefit-card.green h3 { color: var(--green); }
+
+    .simulation-section {
+      padding: 28px 14px 30px;
+      background: #fff;
+    }
+    .sim-title {
+      margin: 0 0 3px;
+      text-align: center;
+      color: var(--red);
+      font-size: 21px;
+      font-weight: 950;
+      letter-spacing: -.035em;
+    }
+    .sim-title::before { content: "🧮 "; }
+    .sim-sub {
+      text-align: center;
+      margin: 0 0 14px;
+      font-size: 19px;
+      line-height: 1.25;
+      font-weight: 950;
+      letter-spacing: -.04em;
+    }
+    .sim-sub .red { color: var(--red); }
+    .sim-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .sim-card {
+      background: #fff;
+      border: 1px solid #d6eadb;
+      border-radius: 16px;
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+    }
+    .sim-card.blue { border-color: #d4e4f8; }
+    .sim-head {
+      background: var(--green);
+      color: #fff;
+      padding: 7px 6px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .sim-card.blue .sim-head { background: var(--blue); }
+    .sim-type {
+      background: #fff;
+      color: var(--green);
+      border-radius: 6px;
+      padding: 2px 5px;
+      font-size: 8px;
+      font-weight: 950;
+      line-height: 1;
+    }
+    .sim-card.blue .sim-type { color: var(--blue); }
+    .sim-heading { font-size: 11px; font-weight: 950; line-height: 1.2; }
+    .sim-body { padding: 8px 8px 10px; }
+    .sim-person {
+      text-align: center;
+      font-size: 42px;
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+    .sim-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 4px;
+      color: #30343b;
+      font-size: 9.5px;
+      line-height: 1.35;
+      font-weight: 750;
+    }
+    .sim-list li {
+      display: grid;
+      grid-template-columns: 8px 1fr;
+      gap: 4px;
+    }
+    .sim-list li::before { content: "•"; color: var(--green); font-weight: 950; }
+    .sim-card.blue .sim-list li::before { color: var(--blue); }
+    .sim-total {
+      margin-top: 8px;
+      border-radius: 12px;
+      background: linear-gradient(180deg, #32aa4f, #16843b);
+      color: #fff;
+      text-align: center;
+      padding: 7px 3px;
+      font-size: 18px;
+      font-weight: 950;
+      line-height: 1;
+      letter-spacing: -.04em;
+    }
+    .sim-card.blue .sim-total { background: linear-gradient(180deg, #2488e8, #005bac); }
+    .payoff {
+      margin: 12px 0 0;
+      background: linear-gradient(180deg, #fff6a7, #ffd84c);
+      border: 2px solid #e9b411;
+      border-radius: 999px;
+      color: var(--red);
+      text-align: center;
+      padding: 8px 8px;
+      font-size: 14px;
+      line-height: 1.35;
+      font-weight: 950;
+      box-shadow: 0 6px 14px rgba(233,180,17,.20);
+    }
+
+    .final-cta {
+      padding: 24px 14px 88px;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(255,212,42,.22), transparent 36%),
+        linear-gradient(180deg, #e9002e, var(--red-dark) 70%, var(--red-deep) 100%);
+      color: #fff;
+      text-align: center;
+    }
+    .final-cta h2 {
+      margin: 0 0 8px;
+      font-size: 24px;
+      line-height: 1.25;
+      font-weight: 950;
+      letter-spacing: -.04em;
+    }
+    .final-cta h2 .yellow { color: #ffe770; }
+    .final-cta p {
+      margin: 0 0 13px;
+      color: rgba(255,255,255,.84);
+      font-size: 11px;
+      line-height: 1.65;
+      font-weight: 750;
+    }
+    .final-cta .cta-btn {
+      background: linear-gradient(180deg, #ff415f, #d71920 60%, #b0001e);
+    }
+    .final-cta .note { color: rgba(255,255,255,.72); }
+
+    .fixed-cta {
+      position: fixed;
+      left: 50%;
+      bottom: 0;
+      width: 100%;
+      max-width: 430px;
+      transform: translateX(-50%);
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(16px);
+      border-top: 1px solid rgba(0,0,0,.08);
+      padding: 8px 12px calc(10px + var(--safe-bottom));
+      z-index: 50;
+    }
+    .fixed-cta .cta-btn {
+      min-height: 50px;
+      font-size: 17px;
+      border-radius: 999px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.35), 0 5px 0 #8c0018, 0 10px 22px rgba(215,25,32,.25);
+    }
+    .fixed-note {
+      margin-top: 5px;
+      color: var(--gray);
+      text-align: center;
+      font-size: 9px;
+      font-weight: 850;
+    }
+
+    @media (min-width: 431px) {
+      body { padding: 24px 0; }
+      .fixed-cta { border-radius: 22px 22px 0 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <main>
+      <section class="hero" id="top">
+        <div class="hero-inner">
+          <div class="logo-row">
+            <div class="logo"><span class="logo-d">d</span><span>バリューパス</span></div>
+            <div class="top-pill">初回31日間無料</div>
+          </div>
+
+          <div class="business-badge">ビジネスパーソン必見！</div>
+          <h1 class="hero-title">モバイルバッテリーが<span class="red-main">借り放題。</span></h1>
+          <p class="hero-copy">毎日の移動・商談・出張でも、充電切れの不安ゼロ。便利機能と日々のお得をまとめて。</p>
+
+          <div class="price-area">
+            <div class="monthly-box">月額<small>税込</small></div>
+            <div class="price-main"><span class="num">550</span><span class="yen">円</span><span class="tax">税込</span></div>
+          </div>
+          <div class="free-ribbon">初回31日間無料</div>
+
+          <div class="hero-visual">
+            <div class="hero-copy-card">
+              <strong>移動も<br>天気も<br>充電も。</strong>
+              <span>外回り・通勤・出張に便利な月額パック。</span>
+            </div>
+            <div class="phone-mock">
+              <div class="phone-d">d</div>
+              <div class="phone-name">dバリューパス</div>
+              <div class="phone-icon ticket">🎟️</div>
+              <div class="phone-icon coin">P</div>
+            </div>
+            <div class="charge-mock"></div>
+            <div class="business-photo"></div>
+            <div class="yellow-badge"><div><b>6</b>時間以上の<br>レンタルで<br>元が取れる</div></div>
+          </div>
+
+          <div class="hero-features">
+            <div class="feature-chip"><span class="icon red">🎟️</span>クーポン<br><span class="red">900種類以上</span></div>
+            <div class="feature-chip"><span class="icon gold">🪙</span>dポイントが<br>貯まる</div>
+            <div class="feature-chip"><span class="icon green">🚃</span>ナビタイム<br>乗換案内</div>
+            <div class="feature-chip"><span class="icon blue">☔</span>ウェザー<br>豪雨通知</div>
+          </div>
+
+          <a class="cta-btn" href="#entry">今すぐ申し込む</a>
+          <p class="note">ドコモ回線をお持ちでない方もOK</p>
+        </div>
+      </section>
+
+      <section class="campaign" id="campaign">
+        <h2 class="campaign-title">さらにエントリーで実質無料！</h2>
+        <div class="campaign-cards">
+          <article class="campaign-card">
+            <div class="campaign-label">誰でも</div>
+            <div class="campaign-month">2カ月<span>実質無料</span></div>
+            <div class="campaign-point">初回31日間無料<br>＋ 🪙 550pt</div>
+          </article>
+          <article class="campaign-card gold">
+            <div class="campaign-label">対象プランご契約なら</div>
+            <div class="campaign-month">3カ月<span>実質無料</span></div>
+            <div class="campaign-point">初回31日間無料<br>＋ 🪙 550pt ＋ 🪙 550pt</div>
+          </article>
+        </div>
+        <p class="note">要エントリー／還元はdポイント（期間・用途限定）</p>
+      </section>
+
+      <section class="business-section" id="business">
+        <h2 class="business-title">移動も、天気も、充電も。<br><span class="red">ビジネスパーソンに便利。</span></h2>
+        <div class="business-cards">
+          <article class="business-card train">
+            <div class="business-card-head">
+              <div class="business-icon train">🚃</div>
+              <h3>ナビタイム<br>乗換案内</h3>
+            </div>
+            <p>通勤や商談、出張の移動をスムーズにサポート。</p>
+            <div class="business-photo-mini train"></div>
+          </article>
+          <article class="business-card weather">
+            <div class="business-card-head">
+              <div class="business-icon weather">☔</div>
+              <h3>ウェザーニュース<br>ゲリラ豪雨通知</h3>
+            </div>
+            <p>急な雨の通知で、傘の準備や予定変更に役立つ。</p>
+            <div class="business-photo-mini weather"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="battery-section" id="battery">
+        <div class="battery-panel">
+          <h2 class="battery-heading">人気のモバイルバッテリーサービスが借り放題</h2>
+          <div class="battery-top">
+            <div class="battery-number"><small>全国</small><span class="num">5万5千台</span></div>
+            <div class="battery-points">
+              <div class="battery-point"><span>📍</span>全国約<br>5万5,000台</div>
+              <div class="battery-point"><span>🔄</span>何度でも<br>0円</div>
+              <div class="battery-point"><span>👑</span>ドコモ<br>独占</div>
+            </div>
+          </div>
+          <table class="fee-table" aria-label="モバイルバッテリー通常料金とdバリューパス料金比較">
+            <thead>
+              <tr><th>利用時間</th><th>通常料金</th><th>dバリューパスなら</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>〜30分</td><td>165円</td><td class="zero">0円</td></tr>
+              <tr><td>30分〜1時間</td><td>330円</td><td class="zero">0円</td></tr>
+              <tr><td>1〜3時間</td><td>430円</td><td class="zero">0円</td></tr>
+              <tr><td>3〜6時間</td><td>500円</td><td class="zero">0円</td></tr>
+              <tr><td>6〜12時間</td><td>570円</td><td class="zero">0円</td></tr>
+              <tr><td>12〜24時間</td><td>640円</td><td class="zero">0円</td></tr>
+            </tbody>
+          </table>
+          <p class="note">※CHARGE SPOTの通常料金（税込）との比較。※一部対象外のバッテリーがございます。</p>
+        </div>
+      </section>
+
+      <section class="benefits-section" id="benefits">
+        <h2 class="benefits-title">特典ラインアップ</h2>
+        <div class="benefits-grid">
+          <article class="benefit-card green"><div class="benefit-icon">🎁</div><h3>デイリー<br>チャンス</h3></article>
+          <article class="benefit-card green"><div class="benefit-icon">🎉</div><h3>毎週金曜は<br><b>10万本</b>プレゼント</h3></article>
+          <article class="benefit-card blue"><div class="benefit-icon">🍿</div><h3>映画が<br><b>最大500円OFF</b></h3></article>
+          <article class="benefit-card"><div class="benefit-icon">☕</div><h3>飲食・ショッピング<br><b>900種類以上</b></h3></article>
+          <article class="benefit-card blue"><div class="benefit-icon">✈️</div><h3>エアトリで<br><b>最大40,000円OFF</b></h3></article>
+          <article class="benefit-card blue"><div class="benefit-icon">📦</div><h3>Amazonで<br><b>最大5倍還元</b></h3></article>
+          <article class="benefit-card"><div class="benefit-icon">📱</div><h3>d払いで<br><b>最大700pt</b></h3></article>
+          <article class="benefit-card"><div class="benefit-icon">🛒</div><h3>dショッピングで<br>ポイント＋クーポン</h3></article>
+          <article class="benefit-card blue"><div class="benefit-icon">📚</div><h3>dブック<br><b>最大80%OFF</b></h3></article>
+        </div>
+        <p class="note">※特典の内容・条件は予告なく変更になる場合があります。</p>
+      </section>
+
+      <section class="simulation-section" id="simulation">
+        <h2 class="sim-title">1日のお得シミュレーション</h2>
+        <p class="sim-sub">あなたなら、<span class="red">1日でいくらお得？</span></p>
+        <div class="sim-cards">
+          <article class="sim-card">
+            <div class="sim-head"><span class="sim-type">TYPE A</span><span class="sim-heading">ポイ活・ネット通販派</span></div>
+            <div class="sim-body">
+              <div class="sim-person">👨‍💼</div>
+              <ul class="sim-list">
+                <li>スーパーでd払い → 700pt還元</li>
+                <li>コンビニでご褒美 → 100円引き</li>
+                <li>Amazonで日用品 → 600pt還元</li>
+              </ul>
+              <div class="sim-total">最大1,400円分お得</div>
+            </div>
+          </article>
+          <article class="sim-card blue">
+            <div class="sim-head"><span class="sim-type">TYPE B</span><span class="sim-heading">外出・スマホ完結派</span></div>
+            <div class="sim-body">
+              <div class="sim-person">👩‍💼</div>
+              <ul class="sim-list">
+                <li>乗換案内で移動をスムーズに</li>
+                <li>豪雨通知で雨対策</li>
+                <li>バッテリー利用 → 640円お得</li>
+                <li>映画館で500円引き</li>
+              </ul>
+              <div class="sim-total">最大1,240円分お得</div>
+            </div>
+          </article>
+        </div>
+        <div class="payoff">1日で月額550円の2倍以上お得になることも。</div>
+      </section>
+
+      <section class="final-cta" id="entry">
+        <h2>初回31日間<span class="yellow">無料</span>で始める</h2>
+        <p>これより先、NTTドコモの画面に移動します。</p>
+        <a class="cta-btn" href="#">初回31日間無料で始める</a>
+        <p class="note">dアカウント、またはドコモ回線が必要です。<br>※31日経過後は自動継続となり、ドコモ以外の方はその月から1カ月分の料金（月額税込550円）がかかります。</p>
+      </section>
+    </main>
+  </div>
+
+  <div class="fi
