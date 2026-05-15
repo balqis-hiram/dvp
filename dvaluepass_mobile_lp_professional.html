@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>dバリューパス｜ビジネスパーソン向けモバイルLP</title>
+  <meta name="description" content="月額550円（税込）でモバイルバッテリー借り放題。ナビタイム乗換案内、ウェザーニュース ゲリラ豪雨通知、クーポン、dポイントなど、ビジネスパーソンに便利な特典をまとめて。" />
+  <style>
+    :root {
+      --red: #d8001d;
+      --red-deep: #b8001a;
+      --red-soft: #fff0f2;
+      --pink: #ffe6eb;
+      --yellow: #ffd94a;
+      --gold: #f7b500;
+      --blue: #1877d4;
+      --blue-soft: #eef7ff;
+      --green: #15a36b;
+      --green-soft: #ecfff7;
+      --black: #1c1c1f;
+      --gray: #62656f;
+      --line: #ececf2;
+      --bg: #f7f7fb;
+      --white: #fff;
+      --shadow: 0 14px 34px rgba(25, 28, 40, 0.12);
+      --shadow-soft: 0 8px 22px rgba(25, 28, 40, 0.08);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "Yu Gothic UI", Meiryo, sans-serif;
+      background: #e9e9ef;
+      color: var(--black);
+      line-height: 1.55;
+      letter-spacing: 0.01em;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .phone-frame {
+      width: min(100%, 430px);
+      margin: 0 auto;
+      min-height: 100vh;
+      background: var(--bg);
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 0 0 1px rgba(0,0,0,.04), 0 22px 80px rgba(0,0,0,.16);
+      padding-bottom: 88px;
+    }
+
+    .section { padding: 34px 18px; }
+
+    .hero {
+      position: relative;
+      padding: 18px 18px 28px;
+      background:
+        radial-gradient(circle at 88% 14%, rgba(255,217,74,.88) 0 13%, transparent 14%),
+        radial-gradient(circle at 90% 40%, rgba(216,0,29,.10) 0 24%, transparent 25%),
+        linear-gradient(180deg, #fff 0%, #fff7f8 72%, #f7f7fb 100%);
+    }
+
+    .brand-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 900;
+      color: var(--red);
+      font-size: 18px;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-mark {
+      width: 28px;
+      height: 28px;
+      border-radius: 9px;
+      background: var(--red);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 950;
+      font-size: 21px;
+      line-height: 1;
+    }
+
+    .mini-note {
+      font-size: 10px;
+      color: var(--gray);
+      white-space: nowrap;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, #fff7b8, var(--yellow));
+      color: #4b3200;
+      font-size: 12px;
+      font-weight: 900;
+      box-shadow: 0 6px 14px rgba(247,181,0,.26);
+      margin-bottom: 12px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.02fr .98fr;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .hero-copy { position: relative; z-index: 2; }
+
+    h1 {
+      margin: 0;
+      font-size: 32px;
+      line-height: 1.02;
+      font-weight: 950;
+      letter-spacing: -0.07em;
+    }
+
+    h1 .red {
+      display: block;
+      color: var(--red);
+      font-size: 44px;
+      text-shadow: 0 3px 0 rgba(255, 217, 74, .7);
+    }
+
+    .lead {
+      margin: 10px 0 12px;
+      color: #3a3d46;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.55;
+    }
+
+    .price-card {
+      width: 168px;
+      background: #fff;
+      border-radius: 20px;
+      padding: 10px 12px 12px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(216,0,29,.12);
+      margin-top: 10px;
+    }
+
+    .price-label {
+      display: inline-block;
+      color: #fff;
+      background: var(--red);
+      border-radius: 999px;
+      padding: 2px 9px;
+      font-size: 11px;
+      font-weight: 900;
+      vertical-align: middle;
+    }
+
+    .price {
+      display: flex;
+      align-items: flex-end;
+      gap: 2px;
+      color: var(--red);
+      font-weight: 950;
+      letter-spacing: -0.06em;
+      line-height: 1;
+      margin-top: 4px;
+    }
+
+    .price .num { font-size: 42px; }
+    .price .yen { font-size: 22px; margin-bottom: 4px; }
+    .tax { color: var(--gray); font-size: 10px; font-weight: 700; margin-top: 2px; }
+
+    .free-ribbon {
+      margin-top: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      border-radius: 12px;
+      background: linear-gradient(180deg, #ff2842, var(--red));
+      color: #fff;
+      font-size: 14px;
+      font-weight: 950;
+      padding: 7px 6px;
+      box-shadow: 0 8px 18px rgba(216,0,29,.24);
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 270px;
+      z-index: 1;
+    }
+
+    .person {
+      position: absolute;
+      top: 4px;
+      right: -18px;
+      width: 148px;
+      height: 210px;
+      border-radius: 76px 76px 30px 30px;
+      background:
+        radial-gradient(circle at 50% 17%, #f1c9a7 0 16%, transparent 17%),
+        linear-gradient(100deg, #172b5b 0 50%, #263e78 51% 100%);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .person::before {
+      content: "";
+      position: absolute;
+      top: 20px;
+      left: 46px;
+      width: 56px;
+      height: 58px;
+      border-radius: 48% 52% 48% 48%;
+      background: #f4c9a4;
+      box-shadow: inset 0 -4px 0 rgba(0,0,0,.04);
+      z-index: 2;
+    }
+
+    .person::after {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: 36px;
+      width: 66px;
+      height: 36px;
+      border-radius: 50% 50% 42% 42%;
+      background: #1c1b22;
+      z-index: 3;
+    }
+
+    .tie {
+      position: absolute;
+      left: 67px;
+      top: 94px;
+      width: 16px;
+      height: 72px;
+      background: linear-gradient(180deg, #fff 0 22%, #d8001d 23% 100%);
+      clip-path: polygon(50% 0, 100% 18%, 80% 100%, 50% 88%, 20% 100%, 0 18%);
+      z-index: 4;
+    }
+
+    .phone-mock {
+      position: absolute;
+      left: 2px;
+      top: 70px;
+      width: 92px;
+      height: 174px;
+      border-radius: 21px;
+      background: #15151b;
+      box-shadow: 0 18px 28px rgba(0,0,0,.22);
+      padding: 6px;
+      transform: rotate(-7deg);
+      z-index: 6;
+    }
+
+    .phone-screen {
+      width: 100%;
+      height: 100%;
+      border-radius: 16px;
+      background: linear-gradient(150deg, #ef0b2a, #b9001d);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-align: center;
+      font-weight: 900;
+      font-size: 10px;
+    }
+
+    .phone-screen .d { font-size: 34px; line-height: .8; }
+    .app-icons { display: grid; grid-template-columns: repeat(2, 24px); gap: 5px; }
+    .app-icons span { height: 24px; border-radius: 8px; background: rgba(255,255,255,.94); display: grid; place-items: center; font-size: 12px; }
+
+    .battery {
+      position: absolute;
+      left: 67px;
+      bottom: 12px;
+      width: 102px;
+      height: 136px;
+      border-radius: 22px 22px 18px 18px;
+      background: linear-gradient(180deg, #fff, #eef5fb);
+      box-shadow: 0 18px 34px rgba(23, 70, 120, .20);
+      border: 1px solid rgba(60,100,140,.12);
+      z-index: 7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-align: center;
+      font-size: 9px;
+      color: var(--blue);
+      font-weight: 950;
+      transform: rotate(4deg);
+    }
+
+    .battery .bolt {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 17px;
+    }
+
+    .value-badge {
+      position: absolute;
+      right: -4px;
+      bottom: 36px;
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 36% 28%, #fff8a8 0 12%, transparent 13%), linear-gradient(145deg, #fff56c, #ffd02e 62%, #ffb700);
+      color: #3f2a00;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      font-size: 11px;
+      line-height: 1.25;
+      font-weight: 950;
+      box-shadow: 0 12px 22px rgba(247,181,0,.36);
+      border: 2px solid #fff;
+      z-index: 10;
+      transform: rotate(8deg);
+    }
+    .value-badge strong { color: var(--red); font-size: 17px; }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 9px;
+      margin-top: 14px;
+    }
+
+    .feature-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
+      border-radius: 16px;
+      padding: 10px 9px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 58px;
+    }
+
+    .icon {
+      width: 32px;
+      height: 32px;
+      flex: 0 0 32px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      font-size: 17px;
+      font-weight: 900;
+    }
+    .icon.red { background: var(--red-soft); color: var(--red); }
+    .icon.gold { background: #fff7dd; color: #b77b00; }
+    .icon.green { background: var(--green-soft); color: var(--green); }
+    .icon.blue { background: var(--blue-soft); color: var(--blue); }
+
+    .feature-card b { display: block; font-size: 12px; line-height: 1.25; }
+    .feature-card span { display: block; font-size: 11px; color: var(--gray); font-weight: 800; line-height: 1.25; }
+
+    .cta {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 58px;
+      width: 100%;
+      border-radius: 999px;
+      background: linear-gradient(180deg, #ff1e38, var(--red));
+      color: #fff;
+      font-weight: 950;
+      font-size: 18px;
+      letter-spacing: -0.02em;
+      box-shadow: 0 14px 28px rgba(216,0,29,.32);
+      border: 0;
+      margin-top: 16px;
+      position: relative;
+    }
+
+    .cta::after { content: "›"; position: absolute; right: 22px; font-size: 28px; line-height: 1; }
+    .cta-note { text-align: center; color: var(--gray); font-size: 11px; font-weight: 700; margin-top: 8px; }
+
+    .campaign {
+      background: linear-gradient(180deg, var(--red), var(--red-deep));
+      color: #fff;
+      padding-top: 30px;
+      padding-bottom: 32px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin: 0 0 18px;
+      font-size: 24px;
+      line-height: 1.25;
+      font-weight: 950;
+      letter-spacing: -0.04em;
+    }
+    .section-title small { display: block; font-size: 12px; color: var(--gray); letter-spacing: .04em; margin-bottom: 5px; }
+    .campaign .section-title small { color: rgba(255,255,255,.8); }
+
+    .offer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+    .offer {
+      background: #fff;
+      border-radius: 22px;
+      padding: 14px 10px 13px;
+      text-align: center;
+      color: var(--black);
+      box-shadow: 0 18px 34px rgba(0,0,0,.18);
+      min-height: 162px;
+      position: relative;
+      overflow: hidden;
+    }
+    .offer::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(216,0,29,.12), transparent 38%);
+      pointer-events: none;
+    }
+    .offer.gold::before { background: linear-gradient(135deg, rgba(247,181,0,.22), transparent 42%); }
+    .offer .label {
+      display: inline-flex;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--red-soft);
+      color: var(--red);
+      font-size: 11px;
+      font-weight: 950;
+      margin-bottom: 6px;
+      position: relative;
+    }
+    .offer.gold .label { background: #fff5d7; color: #9a6500; }
+    .offer .months { position: relative; color: var(--red); font-weight: 950; font-size: 34px; line-height: 1; letter-spacing: -0.06em; }
+    .offer.gold .months { color: #d39100; }
+    .offer .free { position: relative; font-weight: 950; font-size: 21px; letter-spacing: -0.05em; margin-top: 4px; }
+    .offer .points { position: relative; margin-top: 9px; color: var(--gray); font-size: 10px; font-weight: 850; line-height: 1.35; }
+    .pcoin { display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: var(--gold); color: #fff; font-weight: 950; margin: 0 1px; }
+    .caption { font-size: 10px; opacity: .82; text-align: center; margin: 12px 0 0; }
+
+    .utility {
+      background: #fff;
+    }
+
+    .utility .section-title strong { color: var(--red); }
+    .utility-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+    .utility-card {
+      border-radius: 22px;
+      padding: 13px 11px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--line);
+      min-height: 226px;
+      overflow: hidden;
+      position: relative;
+    }
+    .utility-card.train { background: linear-gradient(180deg, var(--green-soft), #fff); }
+    .utility-card.rain { background: linear-gradient(180deg, var(--blue-soft), #fff); }
+    .utility-visual {
+      height: 72px;
+      border-radius: 17px;
+      margin: 9px 0 10px;
+      background: linear-gradient(135deg, rgba(21,163,107,.22), rgba(21,163,107,.04)), repeating-linear-gradient(90deg, rgba(0,0,0,.08) 0 1px, transparent 1px 14px);
+      position: relative;
+      overflow: hidden;
+    }
+    .rain .utility-visual { background: linear-gradient(135deg, rgba(24,119,212,.22), rgba(24,119,212,.04)); }
+    .utility-visual::after {
+      content: "";
+      position: absolute;
+      right: 16px;
+      bottom: -8px;
+      width: 46px;
+      height: 74px;
+      border-radius: 24px 24px 8px 8px;
+      background: #27365f;
+    }
+    .rain .utility-visual::before {
+      content: "☔";
+      position: absolute;
+      left: 16px;
+      top: 16px;
+      font-size: 28px;
+    }
+    .utility-card h3 { margin: 0; font-size: 15px; line-height: 1.25; font-weight: 950; letter-spacing: -0.03em; }
+    .utility-card p { margin: 0; color: var(--gray); font-size: 11px; font-weight: 700; line-height: 1.55; }
+
+    .battery-section { background: linear-gradient(180deg, #f7fbff 0%, #fff 100%); }
+    .battery-panel { background: #fff; border-radius: var(--radius-xl); box-shadow: var(--shadow); padding: 18px; }
+    .stat-row { display: grid; grid-template-columns: .95fr 1.05fr; gap: 14px; align-items: center; }
+    .big-stat {
+      text-align: center;
+      border-radius: 22px;
+      background: linear-gradient(180deg, #eef7ff, #fff);
+      padding: 16px 8px;
+      border: 1px solid rgba(24,119,212,.12);
+    }
+    .big-stat span { display: block; color: var(--blue); font-weight: 950; line-height: 1; }
+    .big-stat .nation { font-size: 17px; }
+    .big-stat .num { font-size: 38px; letter-spacing: -0.06em; margin-top: 4px; }
+    .points-list { display: grid; gap: 8px; }
+    .point { display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 900; background: #f8f9fc; border-radius: 15px; padding: 9px; }
+    .point i { font-style: normal; width: 28px; height: 28px; border-radius: 10px; background: var(--blue-soft); color: var(--blue); display: grid; place-items: center; }
+
+    .fee-table {
+      margin-top: 16px;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      font-size: 11px;
+      font-weight: 800;
+    }
+    .fee-row { display: grid; grid-template-columns: 1.1fr .9fr .7fr; background: #fff; }
+    .fee-row:nth-child(even) { background: #fbfbfd; }
+    .fee-row > div { padding: 9px 8px; border-bottom: 1px solid var(--line); }
+    .fee-row.header { background: var(--blue); color: #fff; font-size: 11px; }
+    .fee-row .zero { color: var(--red); font-weight: 950; font-size: 14px; }
+
+    .benefits { background: var(--bg); }
+    .benefit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; }
+    .benefit-card {
+      background: #fff;
+      border-radius: 18px;
+      min-height: 118px;
+      padding: 10px 7px;
+      text-align: center;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 6px;
+    }
+    .benefit-card .emoji { font-size: 28px; line-height: 1; }
+    .benefit-card b { font-size: 11px; line-height: 1.25; font-weight: 950; letter-spacing: -0.04em; }
+    .benefit-card em { font-style: normal; color: var(--red); font-size: 13px; }
+
+    .simulation { background: #fff; }
+    .sim-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .sim-card {
+      border-radius: 24px;
+      padding: 13px 10px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--line);
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+    .sim-card.green { background: linear-gradient(180deg, var(--green-soft), #fff); }
+    .sim-card.blue { background: linear-gradient(180deg, var(--blue-soft), #fff); }
+    .type { align-self: flex-start; border-radius: 999px; padding: 4px 9px; color: #fff; font-weight: 950; font-size: 10px; }
+    .green .type { background: var(--green); }
+    .blue .type { background: var(--blue); }
+    .sim-card h3 { margin: 0; font-size: 15px; line-height: 1.25; font-weight: 950; letter-spacing: -0.04em; }
+    .character {
+      height: 68px;
+      border-radius: 18px;
+      background: radial-gradient(circle at 50% 30%, #f3c8a1 0 18%, transparent 19%), linear-gradient(135deg, rgba(0,0,0,.06), rgba(255,255,255,.8));
+      position: relative;
+    }
+    .character::after { content: "📱"; position: absolute; right: 22px; bottom: 16px; font-size: 26px; }
+    .sim-card ul { margin: 0; padding: 0; list-style: none; color: var(--gray); font-size: 10.5px; font-weight: 800; line-height: 1.55; }
+    .sim-card li + li { margin-top: 5px; }
+    .result { margin-top: auto; border-radius: 15px; padding: 10px 6px; text-align: center; color: #fff; font-size: 11px; font-weight: 950; line-height: 1.2; }
+    .green .result { background: var(--green); }
+    .blue .result { background: var(--blue); }
+    .result strong { display: block; font-size: 18px; letter-spacing: -0.05em; }
+    .yellow-strip { margin-top: 14px; background: linear-gradient(180deg, #fff7a8, var(--yellow)); border-radius: 18px; padding: 13px 14px; font-weight: 950; text-align: center; font-size: 14px; color: #4b3200; box-shadow: var(--shadow-soft); }
+
+    .faq { background: var(--bg); }
+    details { background: #fff; border-radius: 18px; padding: 14px 15px; box-shadow: var(--shadow-soft); border: 1px solid var(--line); }
+    details + details { margin-top: 10px; }
+    summary { cursor: pointer; font-weight: 950; font-size: 13px; list-style: none; }
+    summary::-webkit-details-marker { display: none; }
+    details p { margin: 10px 0 0; color: var(--gray); font-size: 12px; font-weight: 700; }
+
+    .final {
+      background: linear-gradient(180deg, #ff2140 0%, var(--red-deep) 100%);
+      color: #fff;
+      text-align: center;
+      padding-bottom: 44px;
+    }
+    .final .section-title { font-size: 28px; }
+    .final .section-title mark { background: var(--yellow); color: var(--red); padding: 0 .16em; border-radius: 8px; }
+    .final .cta { background: #fff; color: var(--red); box-shadow: 0 14px 28px rgba(0,0,0,.22); }
+    .final-note { color: rgba(255,255,255,.82); font-size: 10px; margin-top: 10px; }
+
+    .sticky-cta {
+      position: fixed;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      width: min(100%, 430px);
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(16px);
+      border-top: 1px solid rgba(0,0,0,.06);
+      padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+      z-index: 100;
+    }
+    .sticky-cta a { min-height: 52px; margin: 0; font-size: 16px; }
+
+    .note-small { margin: 10px 0 0; color: var(--gray); font-size: 10px; line-height: 1.55; }
+
+    @media (max-width: 374px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-visual { min-height: 236px; margin-top: -8px; }
+      .person { right: 6px; }
+      .phone-mock { left: 34px; }
+      .battery { left: 120px; }
+      .value-badge { right: 14px; }
+      .offer-grid, .utility-grid, .sim-grid { grid-template-columns: 1fr; }
+      .benefit-grid { grid-template-columns: repeat(2, 1fr); }
+      h1 { font-size: 30px; }
+      h1 .red { font-size: 42px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="phone-frame">
+    <section class="hero">
+      <div class="brand-row">
+        <div class="brand"><span class="brand-mark">d</span><span>dバリューパス</span></div>
+        <div class="mini-note">月額税込550円</div>
+      </div>
+
+      <div class="eyebrow">ビジネスパーソン必見！</div>
+
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <h1>モバイルバッテリーが<span class="red">借り放題。</span></h1>
+          <p class="lead">毎日の移動・商談・出張でも、充電切れの不安ゼロ。移動も、天気も、お得もまとめてサポート。</p>
+
+          <div class="price-card">
+            <span class="price-label">月額</span>
+            <div class="price"><span class="num">550</span><span class="yen">円</span></div>
+            <div class="tax">税込／初回31日間無料</div>
+            <div class="free-ribbon">初回31日間無料</div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="person"><div class="tie"></div></div>
+          <div class="phone-mock">
+            <div class="phone-screen">
+              <div class="d">d</div>
+              <div>dバリューパス</div>
+              <div class="app-icons"><span>🎫</span><span>🅿️</span><span>🚃</span><span>☔</span></div>
+            </div>
+          </div>
+          <div class="battery"><div class="bolt">⚡</div><div>CHARGE<br>SPOT</div></div>
+          <div class="value-badge"><div><strong>6時間</strong><br>以上のレンタルで<br><strong>元が取れる</strong></div></div>
+        </div>
+      </div>
+
+      <div class="features">
+        <div class="feature-card"><div class="icon red">🎫</div><div><b>クーポン</b><span>900種類以上</span></div></div>
+        <div class="feature-card"><div class="icon gold">P</div><div><b>dポイントが</b><span>貯まる</span></div></div>
+        <div class="feature-card"><div class="icon green">🚃</div><div><b>ナビタイム</b><span>乗換案内</span></div></div>
+        <div class="feature-card"><div class="icon blue">☔</div><div><b>ウェザーニュース</b><span>ゲリラ豪雨通知</span></div></div>
+      </div>
+
+      <a class="cta" href="#entry">今すぐ申し込む</a>
+      <div class="cta-note">ドコモ回線をお持ちでない方もOK</div>
+    </section>
+
+    <section class="section campaign">
+      <h2 class="section-title"><small>ENTRY CAMPAIGN</small>さらにエントリーで<br>実質無料！</h2>
+      <div class="offer-grid">
+        <div class="offer">
+          <div class="label">誰でも</div>
+          <div class="months">2カ月</div>
+          <div class="free">実質無料</div>
+          <div class="points">初回31日間無料 ＋<br><span class="pcoin">P</span> 550pt</div>
+        </div>
+        <div class="offer gold">
+          <div class="label">対象プランご契約なら</div>
+          <div class="months">3カ月</div>
+          <div class="free">実質無料</div>
+          <div class="points">初回31日間無料 ＋<br><span class="pcoin">P</span> 550pt ＋ <span class="pcoin">P</span> 550pt</div>
+        </div>
+      </div>
+      <p class="caption">要エントリー／還元はdポイント（期間・用途限定）</p>
+    </section>
+
+    <section class="section utility">
+      <h2 class="section-title"><small>BUSINESS UTILITY</small>移動も、天気も、充電も。<br><strong>ビジネスパーソンに便利。</strong></h2>
+      <div class="utility-grid">
+        <article class="utility-card train">
+          <div class="icon green">🚃</div>
+          <div class="utility-visual"></div>
+          <h3>ナビタイム<br>乗換案内</h3>
+          <p>通勤や商談、出張の移動をスムーズにサポート。訪問前の経路確認にも便利。</p>
+        </article>
+        <article class="utility-card rain">
+          <div class="icon blue">☔</div>
+          <div class="utility-visual"></div>
+          <h3>ウェザーニュース<br>ゲリラ豪雨通知</h3>
+          <p>急な雨の通知で、傘の準備や外出予定の変更にすばやく対応。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section battery-section">
+      <h2 class="section-title"><small>BATTERY RENTAL</small>人気のモバイルバッテリー<br>サービスが借り放題</h2>
+      <div class="battery-panel">
+        <div class="stat-row">
+          <div class="big-stat"><span class="nation">全国</span><span class="num">5万5千台</span></div>
+          <div class="points-list">
+            <div class="point"><i>📍</i>全国約5万5,000台</div>
+            <div class="point"><i>↻</i>何度でも 0円</div>
+            <div class="point"><i>👑</i>ドコモ独占</div>
+          </div>
+        </div>
+
+        <div class="fee-table" aria-label="料金比較表">
+          <div class="fee-row header"><div>利用時間</div><div>通常料金</div><div>会員なら</div></div>
+          <div class="fee-row"><div>〜30分</div><div>165円</div><div class="zero">0円</div></div>
+          <div class="fee-row"><div>30分〜1時間</div><div>330円</div><div class="zero">0円</div></div>
+          <div class="fee-row"><div>1〜3時間</div><div>430円</div><div class="zero">0円</div></div>
+          <div class="fee-row"><div>3〜6時間</div><div>500円</div><div class="zero">0円</div></div>
+          <div class="fee-row"><div>6〜12時間</div><div>570円</div><div class="zero">0円</div></div>
+          <div class="fee-row"><div>12〜24時間</div><div>640円</div><div class="zero">0円</div></div>
+        </div>
+        <p class="note-small">※CHARGE SPOTの通常料金（税込）との比較。※一部対象外のバッテリーがございます。</p>
+      </div>
+    </section>
+
+    <section class="section benefits">
+      <h2 class="section-title"><small>BENEFITS</small>特典ラインアップ</h2>
+      <div class="benefit-grid">
+        <div class="benefit-card"><div class="emoji">🎁</div><b>デイリー<br>チャンス</b></div>
+        <div class="benefit-card"><div class="emoji">🎉</div><b>毎週金曜は<br><em>10万本</em>プレゼント</b></div>
+        <div class="benefit-card"><div class="emoji">🍿</div><b>映画が<br><em>最大500円OFF</em></b></div>
+        <div class="benefit-card"><div class="emoji">☕</div><b>飲食・ショッピング<br><em>900種類以上</em></b></div>
+        <div class="benefit-card"><div class="emoji">✈️</div><b>エアトリで<br><em>最大40,000円OFF</em></b></div>
+        <div class="benefit-card"><div class="emoji">📦</div><b>Amazonで<br><em>最大5倍還元</em></b></div>
+        <div class="benefit-card"><div class="emoji">📱</div><b>d払いで<br><em>最大700pt</em></b></div>
+        <div class="benefit-card"><div class="emoji">🛒</div><b>dショッピングで<br>ポイント+クーポン</b></div>
+        <div class="benefit-card"><div class="emoji">📚</div><b>dブック<br><em>最大80%OFF</em></b></div>
+      </div>
+      <p class="note-small">※特典の内容・条件は予告なく変更になる場合があります。</p>
+    </section>
+
+    <section class="section simulation">
+      <h2 class="section-title"><small>SIMULATION</small>1日のお得シミュレーション</h2>
+      <div class="sim-grid">
+        <article class="sim-card green">
+          <div class="type">TYPE A</div>
+          <h3>ポイ活・<br>ネット通販派</h3>
+          <div class="character"></div>
+          <ul>
+            <li>スーパーでd払い<br>→ 700pt還元</li>
+            <li>コンビニでご褒美<br>→ 100円引き</li>
+            <li>Amazonで日用品<br>→ 600pt還元</li>
+          </ul>
+          <div class="result">最大<strong>1,400円分</strong>お得</div>
+        </article>
+        <article class="sim-card blue">
+          <div class="type">TYPE B</div>
+          <h3>外出・<br>スマホ完結派</h3>
+          <div class="character"></div>
+          <ul>
+            <li>ナビタイムで乗換え確認</li>
+            <li>ゲリラ豪雨通知で雨対策</li>
+            <li>バッテリー利用<br>→ 640円お得</li>
+            <li>映画館で500円引き</li>
+          </ul>
+          <div class="result">最大<strong>1,240円分</strong>お得</div>
+        </article>
+      </div>
+      <div class="yellow-strip">1日で月額550円の<br>2倍以上お得になることも。</div>
+    </section>
+
+    <section class="section faq">
+      <h2 class="section-title"><small>FAQ</small>よくある質問</h2>
+      <details>
+        <summary>ドコモ回線がなくても利用できますか？</summary>
+        <p>ドコモ回線をお持ちでない方も、dアカウントでお申し込みいただけます。</p>
+      </details>
+      <details>
+        <summary>初回31日間無料の対象は？</summary>
+        <p>初回お申し込み時に適用されます。適用条件やキャンペーン内容は申込画面でご確認ください。</p>
+      </details>
+      <details>
+        <summary>バッテリーは何度でも借りられますか？</summary>
+        <p>対象のモバイルバッテリーサービスを、条件内で何度でも0円でご利用いただけます。</p>
+      </details>
+    </section>
+
+    <section id="entry" class="section final">
+      <h2 class="section-title">まずは<mark>無料</mark>で。<br>初回31日間無料で始める</h2>
+      <a class="cta" href="#">初回31日間無料で始める</a>
+      <p class="final-note">これより先、NTTドコモの画面に移動します。<br>dアカウント、またはドコモ回線が必要です。</p>
+    </section>
+
+    <div class="sticky-cta">
+      <a class="cta" href="#entry">初回31日間無料で始める</a>
+    </div>
+  </main>
+</body>
+</html>
