@@ -2926,17 +2926,6 @@
       <p style="font-size:13px; color:white; font-weight:700; margin:0; text-align:center;"><span style="border-bottom:3px dotted #e60012;">dアカウント</span>、または<span style="border-bottom:3px dotted #e60012;">ドコモ回線</span>が必要です。</p>
     </div>
 
-    <!-- PCセクション（デスクトップのみ） -->
-    <div id="modalPcSection" style="display:none; padding:14px 16px; border-bottom:1px solid #e8e0d0;">
-      <div style="background:#f0ead8; padding:8px 12px; border-radius:6px; margin-bottom:10px; text-align:center;">
-        <p style="font-size:12px; font-weight:700; color:#666; margin:0;">PCをご利用中のドコモ回線のお客様へ</p>
-      </div>
-      <div style="display:flex; align-items:center; gap:12px;">
-        <p style="font-size:12px; color:#333; line-height:1.7; flex:1; margin:0;">携帯でのお申込がスムーズです。右のQRコードを、<strong>携帯のカメラで読み込む</strong>ことで当サイトへアクセスできます。</p>
-        <div style="width:80px; height:80px; flex-shrink:0; border:2px solid #333; display:flex; align-items:center; justify-content:center; font-size:9px; color:#999; text-align:center; border-radius:3px;">QRコード</div>
-      </div>
-    </div>
-
     <!-- dアカウントなし案内 -->
     <div style="padding:14px 16px;">
       <p style="font-size:13px; font-weight:700; color:#333; margin:0 0 10px;"><span style="color:#e60012; font-weight:900; font-size:15px;">⚠</span> dアカウントをお持ちでない場合</p>
@@ -2968,12 +2957,8 @@
 
 <script>
 (function() {
-  function isDesktop() { return window.innerWidth >= 768; }
-
   function openModal() {
     var modal = document.getElementById('applyModal');
-    var pcSection = document.getElementById('modalPcSection');
-    if (pcSection) pcSection.style.display = isDesktop() ? 'block' : 'none';
     modal.style.display = 'flex';
     document.body.style.overflow = 'hidden';
   }
