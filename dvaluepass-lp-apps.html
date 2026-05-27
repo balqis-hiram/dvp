@@ -1,0 +1,3000 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>dバリューパス｜dポイントが毎日貯まる＋ChargeSPOT借り放題</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700;900&family=Bebas+Neue&family=Zen+Kaku+Gothic+New:wght@700;900&family=M+PLUS+Rounded+1c:wght@800;900&family=Kosugi+Maru&family=Comfortaa:wght@600;700&family=Anton&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --docomo-red: #cc0033;
+    --docomo-red-dark: #a30028;
+    --docomo-red-light: #ff1a4d;
+    --accent-yellow: #ffe600;
+    --ink: #1a1a1a;
+    --ink-soft: #555;
+    --paper: #fffdf8;
+    --paper-alt: #fff5f0;
+    --border: #e8e8e8;
+    --shadow: 0 10px 40px rgba(204, 0, 51, 0.08);
+    --shadow-strong: 0 20px 60px rgba(204, 0, 51, 0.15);
+    --font-display: 'Bebas Neue', 'Noto Serif JP', serif;
+    --font-jp-display: 'Noto Serif JP', serif;
+    --font-jp-body: 'Noto Sans JP', sans-serif;
+    --font-fv-jp: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+    --font-fv-num: 'Anton', 'Bebas Neue', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-jp-body);
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  .container {
+    max-width: 480px;
+    margin: 0 auto;
+    background: var(--paper);
+    position: relative;
+  }
+
+  /* ============ FIRST VIEW ============ */
+  .fv {
+    position: relative;
+    padding: 24px 20px 36px;
+    background: #f5f6f8;
+    color: var(--ink);
+    text-align: center;
+  }
+
+  .fv::before { display: none; }
+  .fv::after { display: none; }
+  .fv-blob-1 { display: none; }
+  .fv-blob-2 { display: none; }
+
+  .fv-inner { position: relative; z-index: 2; }
+
+  /* 上部の白い帯：ブランドロゴ */
+  .fv-brand {
+    display: block;
+    text-align: left;
+    color: var(--ink);
+    font-family: 'Kosugi Maru', sans-serif;
+    font-size: 20px;
+    margin-bottom: 36px;
+    letter-spacing: 0;
+    line-height: 1;
+  }
+  .fv-brand .d {
+    color: var(--docomo-red);
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    margin-right: 2px;
+    vertical-align: -1px;
+    -webkit-text-stroke: 1px var(--docomo-red);
+  }
+
+  /* キャッチ（ポップ版） */
+  .fv-catch-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin: 40px -8px 44px;
+  }
+  .fv-icon {
+    width: 100px;
+    height: auto;
+    flex-shrink: 0;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.1));
+  }
+
+  .fv-catch {
+    font-family: var(--font-fv-jp);
+    font-weight: 900;
+    font-size: 28px;
+    line-height: 1.25;
+    letter-spacing: 0.01em;
+    color: var(--ink);
+    text-align: left;
+  }
+  .fv-catch .line1 {
+    display: block;
+    font-size: 26px;
+  }
+  .fv-catch .hl {
+    color: var(--docomo-red);
+    font-size: 52px;
+  }
+
+  .fv-features {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  .fv-feature {
+    flex: 1;
+    text-align: center;
+    background: white;
+    border-radius: 8px;
+    padding: 8px 4px 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+  }
+  .fv-feature-icon {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    object-fit: contain;
+  }
+  .fv-feature-icon.green {
+    filter: hue-rotate(95deg) saturate(0.7) brightness(0.9);
+  }
+  .fv-feature-label {
+    font-family: var(--font-jp-body);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.3;
+    text-align: left;
+  }
+
+  .fv-tagline {
+    display: block;
+    margin: -4px 0 14px;
+  }
+  .fv-tagline-char {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 20px;
+    background: var(--docomo-red);
+    color: white;
+    font-size: 14px;
+    font-weight: 900;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    letter-spacing: 0.25em;
+    white-space: nowrap;
+  }
+  .fv-tagline-char::before,
+  .fv-tagline-char::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    border-top: 19px solid transparent;
+    border-bottom: 19px solid transparent;
+  }
+  .fv-tagline-char::before {
+    left: -14px;
+    border-right: 14px solid var(--docomo-red);
+  }
+  .fv-tagline-char::after {
+    right: -14px;
+    border-left: 14px solid var(--docomo-red);
+  }
+
+  .fv-subcopy {
+    text-align: center;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 900;
+    font-size: 17px;
+    color: var(--ink);
+    line-height: 1.7;
+    margin-bottom: 16px;
+    letter-spacing: 0.06em;
+    padding: 12px 16px;
+    background: white;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+  }
+  .fv-subcopy-price {
+    font-size: 15px;
+  }
+  .fv-new-banner {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 10px;
+    background: white;
+    color: #1a5fa8;
+    border-radius: 8px;
+    border: 2px solid #2196f3;
+    padding: 12px 16px;
+    margin-bottom: 14px;
+    font-weight: 700;
+  }
+  .fv-new-badge {
+    background: #2196f3;
+    color: white;
+    font-size: 10px;
+    font-weight: 900;
+    padding: 2px 7px;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    flex-shrink: 0;
+    margin-bottom: 2px;
+  }
+  .fv-new-icon {
+    font-size: 30px;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+  .fv-new-text {
+    flex: 0 0 auto;
+    font-size: 13px;
+    color: #1a5fa8;
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+  }
+  .fv-new-text strong {
+    font-size: 17px;
+    color: #1a5fa8;
+  }
+
+  .fv-subcopy-price .num {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 900;
+    font-size: 26px;
+    color: var(--docomo-red);
+    vertical-align: -3px;
+    margin: 0 3px;
+    letter-spacing: 0.04em;
+  }
+
+  /* メインの数字ブロック：誰でも2カ月 / 最大3カ月 */
+  .fv-hero {
+    background: var(--docomo-red);
+    border-radius: 16px;
+    padding: 22px 18px 22px;
+    margin: 14px 0 18px;
+    position: relative;
+    color: white;
+  }
+  .fv-hero::before {
+    display: none;
+  }
+
+  .fv-hero-base {
+    font-family: var(--font-fv-jp);
+    font-weight: 900;
+    font-size: 22px;
+    color: white;
+    line-height: 1.1;
+    margin-bottom: 4px;
+  }
+  .fv-hero-base .hl-num {
+    font-family: var(--font-fv-num);
+    font-size: 50px;
+    color: var(--accent-yellow);
+    vertical-align: -8px;
+    margin: 0 2px;
+    -webkit-text-stroke: 1.5px #000;
+    text-shadow: 2px 2px 0 rgba(0,0,0,0.3);
+  }
+  .fv-hero-base .ast {
+    color: rgba(255,255,255,0.7);
+    font-size: 14px;
+    vertical-align: super;
+  }
+
+  .fv-hero-base-note {
+    font-family: var(--font-jp-body);
+    font-size: 11px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.5;
+    margin-top: 4px;
+    text-align: left;
+  }
+
+  .fv-big {
+    font-family: var(--font-fv-jp);
+    font-weight: 900;
+    font-size: 24px;
+    color: white;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .fv-big .num {
+    font-family: var(--font-fv-num);
+    font-size: 76px;
+    color: var(--accent-yellow);
+    line-height: 0.85;
+    letter-spacing: -0.02em;
+    display: inline-block;
+    vertical-align: -10px;
+    margin: 0 2px;
+  }
+  .fv-big .unit {
+    font-family: var(--font-fv-jp);
+    font-weight: 900;
+    font-size: 24px;
+    color: white;
+    margin-right: 4px;
+  }
+
+  .fv-divider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 16px 0 14px;
+    color: rgba(255,255,255,0.9);
+    font-size: 16px;
+    font-family: var(--font-fv-jp);
+    font-weight: 900;
+    letter-spacing: 0.05em;
+  }
+  .fv-divider::before,
+  .fv-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(255,255,255,0.4);
+  }
+
+  .fv-hero-sub {
+    font-family: var(--font-fv-jp);
+    font-weight: 900;
+    font-size: 18px;
+    color: white;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+  .fv-hero-sub .num {
+    font-family: var(--font-fv-num);
+    font-size: 38px;
+    color: var(--accent-yellow);
+    vertical-align: -4px;
+    margin: 0 2px;
+  }
+
+  .fv-hero-row {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 10px;
+    padding: 16px 14px 12px;
+    margin-bottom: 10px;
+    text-align: center;
+    position: relative;
+  }
+  .fv-hero-row.featured {
+    background: rgba(255,255,255,0.2);
+    border-color: white;
+    margin-bottom: 0;
+  }
+  .fv-hero-row-tag {
+    display: inline-block;
+    font-family: var(--font-jp-body);
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--docomo-red);
+    background: white;
+    padding: 4px 14px;
+    border-radius: 999px;
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+  }
+  .fv-hero-row.featured .fv-hero-row-tag {
+    background: white;
+    color: var(--docomo-red);
+    font-weight: 900;
+  }
+  .fv-hero-row-result {
+    font-family: var(--font-fv-jp);
+    font-weight: 900;
+    font-size: 20px;
+    color: white;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .fv-hero-row-result .num {
+    font-family: var(--font-fv-num);
+    font-size: 56px;
+    color: var(--accent-yellow);
+    vertical-align: -10px;
+    margin: 0 2px;
+    line-height: 0.85;
+    display: inline-block;
+    -webkit-text-stroke: 2px #000;
+    text-shadow: 3px 3px 0 rgba(0,0,0,0.3);
+  }
+  .fv-hero-row-result .unit {
+    font-family: var(--font-fv-jp);
+    font-weight: 900;
+    font-size: 20px;
+    color: white;
+    margin-right: 4px;
+  }
+  .fv-hero-row-formula {
+    font-family: var(--font-jp-body);
+    font-size: 13px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.95);
+    margin-top: 10px;
+    line-height: 1.5;
+    padding-top: 8px;
+    border-top: 1px dashed rgba(255,255,255,0.3);
+  }
+  .fv-hero-row.featured .fv-hero-row-formula {
+    color: white;
+    border-top-color: rgba(255,255,255,0.4);
+  }
+
+  .fv-hero-meta {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+  }
+  .fv-hero-plans {
+    font-family: var(--font-jp-body);
+    font-size: 12px;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.5;
+    margin-bottom: 6px;
+  }
+  .fv-hero-note {
+    font-family: var(--font-jp-body);
+    font-size: 12px;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.6;
+    background: rgba(0,0,0,0.12);
+    border-left: 2px solid var(--accent-yellow);
+    padding: 8px 10px;
+    border-radius: 0 4px 4px 0;
+    text-align: left;
+  }
+
+  /* 条件表示の小さな帯 */
+  .fv-cond {
+    background: var(--paper-alt);
+    color: var(--ink);
+    font-family: var(--font-jp-body);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 7px 12px;
+    border-radius: 6px;
+    margin: 10px 0 14px;
+    line-height: 1.5;
+    border: 1px solid var(--border);
+  }
+  .fv-cond strong {
+    color: var(--docomo-red);
+  }
+
+  /* CTAボタン */
+  .fv-cta-note {
+    font-size: 10px;
+    color: rgba(255,255,255,0.8);
+    text-align: center;
+    margin-top: 8px;
+    line-height: 1.5;
+    padding: 0 8px;
+  }
+
+  .fv-cta {
+    display: block;
+    background: var(--docomo-red);
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 900;
+    font-family: var(--font-fv-jp);
+    border-radius: 999px;
+    box-shadow: 0 4px 16px rgba(204, 0, 51, 0.3);
+    transition: transform 0.15s, box-shadow 0.15s;
+    border: none;
+    letter-spacing: 0.02em;
+  }
+  .fv-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(204, 0, 51, 0.4);
+  }
+  .fv-cta::after {
+    content: ' ▶';
+    font-size: 16px;
+    margin-left: 6px;
+    vertical-align: 2px;
+  }
+
+  .fv-note {
+    font-size: 10px;
+    color: var(--ink-soft);
+    margin-top: 12px;
+    font-family: var(--font-jp-body);
+  }
+
+  .fv-free-note {
+    font-size: 12px;
+    color: white;
+    font-family: var(--font-jp-body);
+    font-weight: 700;
+    margin-top: 16px;
+    line-height: 1.6;
+    text-align: left;
+  }
+  .fv-free-note .ast { color: var(--accent-yellow); }
+
+  .fv-free-subnote {
+    font-size: 10px;
+    color: rgba(255,255,255,0.75);
+    font-family: var(--font-jp-body);
+    margin-top: 8px;
+    line-height: 1.6;
+    text-align: left;
+  }
+
+  /* ============ SECTION BASE ============ */
+  section {
+    padding: 72px 24px;
+    position: relative;
+  }
+
+  .section-label {
+    display: inline-block;
+    font-family: var(--font-jp-body);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--docomo-red);
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 32px;
+    line-height: 1.3;
+  }
+  .section-label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 24px;
+    height: 2px;
+    background: var(--docomo-red);
+  }
+
+  .section-title {
+    font-family: var(--font-jp-display);
+    font-size: 26px;
+    font-weight: 900;
+    line-height: 1.45;
+    margin-bottom: 32px;
+    letter-spacing: -0.01em;
+  }
+  .section-title .accent {
+    color: var(--docomo-red);
+  }
+
+  /* ============ WHAT IS ============ */
+  .what {
+    background: var(--paper-alt);
+  }
+
+  .what-points {
+    display: grid;
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .point-card {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .point-num {
+    font-family: var(--font-display);
+    font-size: 32px;
+    color: var(--docomo-red);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .point-text {
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .point-text span {
+    display: block;
+    font-size: 12px;
+    color: var(--ink-soft);
+    font-weight: 400;
+    margin-top: 4px;
+  }
+
+  /* ============ HERO FEATURE: BATTERY ============ */
+  .battery {
+    background: #ffffff;
+    color: var(--ink);
+    padding: 72px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .battery::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    right: -40px;
+    font-size: 280px;
+    opacity: 0.04;
+    transform: rotate(-15deg);
+  }
+
+  .battery .section-label { color: var(--docomo-red); font-size: 15px; }
+  .battery .section-label::before { background: var(--docomo-red); }
+
+  .battery-hero-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin: 32px 0 32px;
+  }
+  .battery-hero-icon {
+    width: 100px;
+    height: auto;
+    flex-shrink: 0;
+    filter: drop-shadow(0 6px 16px rgba(0,0,0,0.15));
+  }
+
+  .battery-title {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    line-height: 1.7;
+    letter-spacing: 0.06em;
+    position: relative;
+    color: var(--ink);
+    text-align: center;
+  }
+  .battery-title .hl {
+    color: var(--docomo-red);
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 900;
+    font-size: 30px;
+    letter-spacing: 0.02em;
+    margin: 0 4px;
+  }
+
+  .battery-badges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 32px;
+  }
+  .battery-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: white;
+    border: 1px solid var(--border);
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--ink);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  }
+  .battery-badge.accent {
+    background: white;
+    border-color: var(--border);
+    color: var(--ink);
+  }
+  .badge-icon {
+    font-size: 16px;
+  }
+
+  .battery-calc {
+    margin-bottom: 20px;
+  }
+  .battery-calc-head {
+    font-family: var(--font-jp-body);
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.5;
+    padding: 14px 16px;
+    background: #fff8e6;
+    border-radius: 10px;
+    border-left: 4px solid var(--docomo-red);
+    color: var(--ink);
+    text-align: left;
+  }
+  .battery-calc-head .hl2 {
+    display: block;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+    color: var(--docomo-red);
+    margin-top: 4px;
+  }
+
+  .price-table {
+    background: white;
+    color: var(--ink);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-strong);
+    margin-bottom: 16px;
+  }
+  .price-table-head {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr;
+    background: #f5f5f5;
+    padding: 14px 16px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--ink-soft);
+  }
+  .price-table-head div:nth-child(2) { text-align: center; }
+  .price-table-head div:nth-child(3) { text-align: center; color: var(--docomo-red); }
+
+  .price-row {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr;
+    padding: 8px 16px;
+    border-top: 1px solid var(--border);
+    align-items: center;
+    font-size: 15px;
+  }
+  .price-row.highlight {
+    background: #fff8e6;
+  }
+  .price-row .time { font-weight: 500; }
+  .price-row .normal { text-align: center; color: #999; }
+  .price-row .member {
+    text-align: center;
+    font-family: var(--font-display);
+    font-size: 22px;
+    color: var(--docomo-red);
+    font-weight: 700;
+  }
+
+  .battery-note {
+    font-size: 10px;
+    color: var(--ink-soft);
+    opacity: 0.7;
+    margin-top: 16px;
+    line-height: 1.6;
+  }
+
+  /* ============ DAILY CHANCE ============ */
+  .daily {
+    background: linear-gradient(180deg, var(--paper) 0%, var(--paper-alt) 100%);
+  }
+
+  .daily-badge {
+    display: inline-block;
+    background: var(--docomo-red);
+    color: white;
+    font-size: 11px;
+    font-weight: 900;
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    letter-spacing: 0.05em;
+  }
+
+  .daily-cards {
+    display: grid;
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .daily-card {
+    background: white;
+    padding: 28px 24px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--docomo-red);
+  }
+  .daily-card-label {
+    font-family: var(--font-display);
+    font-size: 14px;
+    color: var(--docomo-red);
+    letter-spacing: 0.15em;
+    margin-bottom: 8px;
+  }
+  .daily-card-title {
+    font-family: var(--font-jp-display);
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+  .daily-card-title .num {
+    color: var(--docomo-red);
+    font-size: 28px;
+  }
+  .daily-card-text {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  .daily-voice {
+    margin-top: 24px;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--ink-soft);
+    position: relative;
+    border: 1px dashed var(--docomo-red);
+  }
+  .daily-voice::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: 16px;
+    background: var(--paper-alt);
+    padding: 0 8px;
+    font-size: 32px;
+    color: var(--docomo-red);
+    font-family: Georgia, serif;
+    line-height: 1;
+  }
+
+  /* ============ LINEUP ============ */
+  .lineup {
+    background: white;
+  }
+
+  .lineup-title {
+    font-family: 'Zen Kaku Gothic New', sans-serif !important;
+    font-weight: 900 !important;
+    font-size: 18px !important;
+    line-height: 1.8 !important;
+    letter-spacing: 0.02em !important;
+    color: var(--ink-soft);
+  }
+  .lineup-title .price {
+    font-family: 'Anton', sans-serif;
+    font-size: 56px;
+    color: var(--docomo-red);
+    vertical-align: baseline;
+    margin: 0 6px;
+    letter-spacing: -0.02em;
+    display: inline-flex;
+    align-items: flex-end;
+    line-height: 1;
+  }
+  .lineup-title .price .yen {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 24px;
+    margin-left: 2px;
+    font-weight: 900;
+  }
+  .lineup-title .accent {
+    background: linear-gradient(transparent 60%, var(--accent-yellow) 60%);
+    color: var(--ink);
+    padding: 0 4px;
+    font-size: 32px;
+  }
+
+  .lineup-grid {
+    display: grid;
+    gap: 20px;
+    margin-top: 8px;
+  }
+  .lineup-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  }
+  .lineup-card-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px 22px;
+    background: var(--docomo-red);
+    color: white;
+  }
+  .lineup-icon {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    flex-shrink: 0;
+    filter: grayscale(1) brightness(10);
+  }
+  .lineup-icon.green {
+    filter: grayscale(1) brightness(10);
+  }
+  .lineup-icon.no-filter {
+    filter: none;
+  }
+  .lineup-card-title {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    color: white;
+  }
+  .lineup-list {
+    list-style: none;
+    padding: 0;
+  }
+  .lineup-list li {
+    font-size: 13px;
+    padding: 8px 0;
+    padding-left: 20px;
+    position: relative;
+    border-bottom: 1px solid rgba(204,0,51,0.1);
+    line-height: 1.5;
+  }
+  .lineup-list li:last-child { border-bottom: none; }
+  .lineup-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--docomo-red);
+    font-weight: 900;
+  }
+  .lineup-list strong { color: var(--docomo-red); font-weight: 900; }
+
+  .lineup-body {
+    padding: 16px 22px 20px;
+  }
+  .lineup-feature {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .lineup-feature:last-child { border-bottom: none; padding-bottom: 0; }
+  .lineup-feature:first-child { padding-top: 0; }
+  .lineup-feature-title {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .lineup-feature-text {
+    font-family: var(--font-jp-body);
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+  .lineup-feature-text strong {
+    color: var(--docomo-red);
+    font-weight: 900;
+  }
+
+  /* ============ SIMULATION ============ */
+  .sim {
+    background: var(--paper-alt);
+    padding-top: 12px;
+  }
+
+  .sim-cards {
+    display: grid;
+    gap: 20px;
+    margin-top: 24px;
+  }
+  .sim-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .sim-head {
+    background: var(--docomo-red);
+    color: white;
+    padding: 18px 20px;
+  }
+  .sim-type {
+    font-size: 11px;
+    opacity: 0.85;
+    margin-bottom: 4px;
+    letter-spacing: 0.05em;
+  }
+  .sim-title {
+    font-family: var(--font-jp-display);
+    font-size: 17px;
+    font-weight: 900;
+    line-height: 1.4;
+  }
+  .sim-body { padding: 20px; }
+  .sim-timeline {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 16px;
+  }
+  .sim-timeline li {
+    display: flex;
+    gap: 12px;
+    padding: 10px 0;
+    font-size: 15px;
+    border-bottom: 1px dashed var(--border);
+  }
+  .sim-timeline li:last-child { border-bottom: none; }
+  .sim-time {
+    font-family: var(--font-display);
+    color: var(--docomo-red);
+    min-width: 48px;
+    font-size: 16px;
+  }
+  .sim-total {
+    text-align: center;
+    padding: 16px;
+    background: var(--paper-alt);
+    border-radius: 8px;
+    margin-top: 8px;
+  }
+  .sim-total-label {
+    font-size: 11px;
+    color: var(--ink-soft);
+  }
+  .sim-total-num {
+    font-family: var(--font-display);
+    font-size: 36px;
+    color: var(--docomo-red);
+    line-height: 1;
+    margin-top: 4px;
+  }
+  .sim-total-num .yen { font-size: 20px; margin-left: 4px; }
+
+  .sim-killer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    background: #fff8e6;
+    color: var(--ink);
+    border-radius: 12px;
+    border: 2px solid #f0c040;
+    font-family: 'Noto Sans JP', 'Zen Kaku Gothic New', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.6;
+  }
+  .sim-killer .hl {
+    color: #c8960c;
+    font-size: 20px;
+    font-weight: 900;
+  }
+
+  /* ============ CAMPAIGN ============ */
+  .campaign {
+    background: linear-gradient(165deg, var(--docomo-red) 0%, var(--docomo-red-dark) 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+    padding: 56px 24px;
+  }
+  .campaign::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    right: -100px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255, 230, 0, 0.12) 0%, transparent 60%);
+    border-radius: 50%;
+  }
+
+  .campaign .section-label { color: var(--accent-yellow); }
+  .campaign .section-label::before { background: var(--accent-yellow); }
+
+  .campaign-title {
+    font-family: var(--font-jp-display);
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 1.3;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .campaign-title .hl {
+    background: var(--accent-yellow);
+    color: var(--ink);
+    padding: 2px 8px;
+    display: inline-block;
+  }
+
+  .plan-cards {
+    display: grid;
+    gap: 12px;
+    position: relative;
+  }
+  .plan-card {
+    background: white;
+    color: var(--ink);
+    padding: 16px 18px;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .plan-card.featured {
+    background: var(--accent-yellow);
+  }
+  .plan-card.featured::before {
+    content: 'BEST';
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    background: var(--ink);
+    color: var(--accent-yellow);
+    font-family: var(--font-display);
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 3px;
+    letter-spacing: 0.1em;
+  }
+  .plan-card-left {
+    flex-shrink: 0;
+    text-align: center;
+    border-right: 1px dashed rgba(0,0,0,0.15);
+    padding-right: 14px;
+  }
+  .plan-card-right {
+    flex: 1;
+    min-width: 0;
+  }
+  .plan-tag {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--docomo-red);
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+  .plan-plans {
+    font-size: 11px;
+    color: var(--ink-soft);
+    line-height: 1.4;
+  }
+  .plan-result {
+    font-family: var(--font-jp-display);
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .plan-result .big {
+    font-family: var(--font-display);
+    font-size: 40px;
+    color: var(--docomo-red);
+    vertical-align: -4px;
+    margin-right: 2px;
+  }
+  .plan-formula {
+    font-size: 10px;
+    color: var(--ink-soft);
+    margin-top: 6px;
+  }
+
+  .campaign-note {
+    font-size: 10px;
+    opacity: 0.75;
+    margin-top: 16px;
+    line-height: 1.6;
+  }
+
+  /* camp-hero: FVと同構造 */
+  .camp-hero {
+    background: var(--docomo-red);
+    border-radius: 14px;
+    padding: 24px 20px 20px;
+    position: relative;
+    margin-top: 8px;
+  }
+  .camp-hero-base {
+    text-align: center;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 900;
+    font-size: 22px;
+    color: white;
+    line-height: 1.2;
+    margin-bottom: 6px;
+  }
+  .camp-hero-base .hl-num {
+    font-size: 48px;
+    color: #ffe600;
+    -webkit-text-stroke: 2px #000;
+    text-stroke: 2px #000;
+    vertical-align: -6px;
+    margin: 0 2px;
+  }
+  .camp-hero-base .ast {
+    font-size: 14px;
+    vertical-align: super;
+  }
+  .camp-hero-base-note {
+    font-size: 10px;
+    color: rgba(255,255,255,0.75);
+    text-align: center;
+    margin-bottom: 16px;
+    line-height: 1.5;
+    border-left: 2px solid #ffe600;
+    padding-left: 8px;
+    text-align: left;
+  }
+  .camp-divider {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffe600;
+    margin-bottom: 12px;
+    letter-spacing: 0.05em;
+  }
+  .camp-hero-row {
+    background: rgba(255,255,255,0.12);
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-bottom: 8px;
+  }
+  .camp-hero-row.featured {
+    background: #ffe600;
+  }
+  .camp-hero-row-tag {
+    font-size: 10px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 4px;
+    background: rgba(255,255,255,0.2);
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 20px;
+  }
+  .camp-hero-row.featured .camp-hero-row-tag {
+    color: var(--ink);
+    background: rgba(0,0,0,0.12);
+  }
+  .camp-hero-row-result {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+    color: white;
+    line-height: 1.2;
+    margin: 4px 0;
+  }
+  .camp-hero-row.featured .camp-hero-row-result {
+    color: var(--ink);
+  }
+  .camp-hero-row-result .num {
+    font-size: 48px;
+    color: #ffe600;
+    -webkit-text-stroke: 2px #000;
+    text-stroke: 2px #000;
+    vertical-align: -6px;
+    margin-right: 2px;
+  }
+  .camp-hero-row.featured .camp-hero-row-result .num {
+    color: var(--docomo-red);
+    -webkit-text-stroke: 1px rgba(0,0,0,0.2);
+  }
+  .camp-hero-row-result .unit {
+    font-size: 20px;
+  }
+  .camp-hero-row-formula {
+    font-size: 11px;
+    color: rgba(255,255,255,0.7);
+    margin-top: 2px;
+  }
+  .camp-hero-row.featured .camp-hero-row-formula {
+    color: rgba(0,0,0,0.55);
+  }
+  .camp-hero-meta {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+  }
+  .camp-hero-plans {
+    font-size: 12px;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 4px;
+  }
+  .camp-hero-note {
+    font-size: 12px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.6;
+  }
+  .camp-cond {
+    background: white;
+    color: var(--docomo-red);
+    text-align: center;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 12px;
+  }
+  .camp-cta {
+    display: block;
+    background: white;
+    color: var(--docomo-red);
+    text-align: center;
+    padding: 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 900;
+    font-size: 17px;
+    margin-top: 16px;
+    letter-spacing: 0.04em;
+  }
+
+  /* ============ FINAL CTA ============ */
+  .final {
+    background: var(--paper);
+    text-align: center;
+    padding: 80px 24px;
+  }
+  .final-title {
+    font-family: var(--font-jp-display);
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 1.4;
+    margin-bottom: 16px;
+  }
+  .final-sub {
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-bottom: 32px;
+  }
+  .final-cta {
+    display: block;
+    background: var(--docomo-red);
+    color: white;
+    text-decoration: none;
+    padding: 22px;
+    font-size: 18px;
+    font-weight: 900;
+    border-radius: 8px;
+    box-shadow: 0 12px 32px rgba(204, 0, 51, 0.3);
+    transition: transform 0.2s;
+  }
+  .final-cta:hover { transform: translateY(-2px); }
+  .final-cta::after { content: ' →'; }
+  .final-note {
+    font-size: 11px;
+    color: var(--ink-soft);
+    margin-top: 14px;
+  }
+
+  /* ============ FAQ ============ */
+  .faq { background: var(--paper-alt); }
+  .faq-list { margin-top: 24px; }
+  .faq-item {
+    background: white;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  .faq-q {
+    padding: 18px 20px;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .faq-q::before {
+    content: 'Q.';
+    color: var(--docomo-red);
+    font-family: var(--font-display);
+    font-size: 18px;
+    margin-right: 10px;
+  }
+  .faq-q span { flex: 1; }
+  .faq-q::after {
+    content: '+';
+    font-size: 22px;
+    color: var(--docomo-red);
+    transition: transform 0.3s;
+  }
+  .faq-item.open .faq-q::after { transform: rotate(45deg); }
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s, padding 0.3s;
+    padding: 0 20px;
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.8;
+  }
+  .faq-item.open .faq-a {
+    max-height: 300px;
+    padding: 0 20px 20px;
+  }
+
+  /* ============ FOOTER ============ */
+  .footer-links {
+    background: #f5f6f8;
+    border-top: 1px solid var(--border);
+  }
+  .footer-link-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px 20px;
+    border-bottom: 1px solid var(--border);
+    text-decoration: none;
+    color: var(--ink);
+    font-size: 13px;
+  }
+  .footer-link-item:last-child {
+    border-bottom: none;
+  }
+  .footer-link-item::after {
+    content: '›';
+    font-size: 20px;
+    color: #999;
+    flex-shrink: 0;
+    margin-left: 8px;
+  }
+  footer {
+    background: #6b6b6b;
+    color: white;
+    padding: 18px 24px;
+    text-align: center;
+  }
+  .footer-company {
+    font-size: 13px;
+    opacity: 0.9;
+  }
+
+  /* ============ STICKY CTA ============ */
+  .sticky-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 12px 16px;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+    z-index: 100;
+    max-width: 480px;
+    margin: 0 auto;
+    transform: translateY(100%);
+    transition: transform 0.3s;
+  }
+  .sticky-cta.show { transform: translateY(0); }
+  .sticky-cta a {
+    display: block;
+    background: var(--docomo-red);
+    color: white;
+    text-align: center;
+    padding: 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 15px;
+  }
+  .sticky-note {
+    font-size: 10px;
+    color: #666;
+    text-align: center;
+    margin-top: 6px;
+    line-height: 1.5;
+  }
+
+  /* padding for sticky */
+  .spacer { height: 110px; }
+
+  /* responsive */
+  @media (min-width: 481px) {
+    .container { box-shadow: 0 0 60px rgba(0,0,0,0.1); }
+  }
+
+  /* ============ MOBILE RESPONSIVE ============ */
+  @media (max-width: 420px) {
+
+    /* FV - キャッチを縦積みに */
+    .fv-catch-wrap {
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      margin: 24px 0 20px;
+    }
+    .fv-icon {
+      width: 76px;
+    }
+    .fv-catch {
+      text-align: center;
+      font-size: 22px;
+    }
+    .fv-catch .line1 {
+      font-size: 20px;
+    }
+    .fv-catch .hl {
+      font-size: 38px;
+    }
+
+    /* サブコピー */
+    .fv-subcopy {
+      font-size: 15px;
+      padding: 10px 12px;
+    }
+    .fv-subcopy-price .num {
+      font-size: 22px;
+    }
+
+    /* FV features */
+    .fv-features {
+      gap: 5px;
+    }
+    .fv-feature {
+      padding: 7px 4px 6px;
+      gap: 6px;
+    }
+    .fv-feature-icon {
+      width: 22px;
+      height: 22px;
+    }
+    .fv-feature-label {
+      font-size: 10px;
+    }
+
+    /* FV hero box */
+    .fv-hero-row-result .num {
+      font-size: 44px;
+    }
+    .fv-hero-row-result {
+      font-size: 16px;
+    }
+    .fv-hero-row-formula {
+      font-size: 11px;
+    }
+    .fv-hero-row-tag {
+      font-size: 10px;
+    }
+    .fv-divider {
+      font-size: 14px;
+    }
+
+    /* Battery section */
+    .battery-title {
+      font-size: 20px;
+    }
+    .battery-badges {
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Section titles */
+    .section-title {
+      font-size: 22px;
+    }
+
+    /* Simulation */
+    .sim-total-num {
+      font-size: 28px;
+    }
+    .sim-card {
+      padding: 20px 16px;
+    }
+
+    /* Campaign cards */
+    .campaign-grid {
+      flex-direction: column;
+    }
+
+    /* Lineup */
+    .lineup-card-title {
+      font-size: 17px;
+    }
+  }
+
+  /* fade-in animations */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fv-inner > * { animation: fadeUp 0.8s ease both; }
+  .fv-inner > *:nth-child(1) { animation-delay: 0.1s; }
+  .fv-inner > *:nth-child(2) { animation-delay: 0.2s; }
+  .fv-inner > *:nth-child(3) { animation-delay: 0.3s; }
+  .fv-inner > *:nth-child(4) { animation-delay: 0.4s; }
+  .fv-inner > *:nth-child(5) { animation-delay: 0.5s; }
+  .fv-inner > *:nth-child(6) { animation-delay: 0.6s; }
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 480px) {
+    .fv-sub-copy { font-size: 13px !important; }
+    .fv-main-copy { font-size: 36px !important; }
+    .fv-desc { font-size: 11px !important; }
+    .fv-price-label { font-size: 12px !important; padding: 5px 6px !important; }
+    .fv-price-num { font-size: 42px !important; }
+    .fv-price-yen { font-size: 16px !important; }
+    .fv-price-tax { font-size: 10px !important; }
+    .entry-num { font-size: 32px !important; }
+    .entry-text { font-size: 13px !important; }
+    .battery-service-desc { font-size: 10px !important; }
+  }
+  /* ============================================================ */
+  /* ========== V2: ポイ活訴求版 追加スタイル ============================ */
+  /* ============================================================ */
+
+  :root {
+    --gold: #d4a017;
+    --gold-deep: #c8960c;
+    --charge-blue: #00b4d8;
+    --charge-blue-deep: #0077b6;
+  }
+
+  /* ====== FV ツイン構造 ====== */
+  .fv-twin {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 18px;
+    position: relative;
+  }
+  .twin-plus {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 44px;
+    height: 44px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 30px;
+    font-weight: 900;
+    color: var(--docomo-red);
+    line-height: 1;
+    z-index: 5;
+    pointer-events: none;
+  }
+  .twin-plus::before {
+    content: '＋';
+    line-height: 1;
+    transform: translateY(-2px);
+  }
+  .twin-card {
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+    position: relative;
+  }
+  .twin-card.pointlife {
+    background: linear-gradient(135deg, #fff9e6 0%, #fef3c7 100%);
+    border: 2px solid var(--gold);
+  }
+  .twin-card.charge {
+    background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+    border: 2px solid var(--charge-blue);
+  }
+  .pointlife-inner, .charge-inner {
+    padding: 18px 16px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+  .pointlife-text, .charge-text {
+    flex: 1;
+    min-width: 0;
+  }
+  .pointlife-headline, .charge-headline {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .pointlife-headline .small {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 4px;
+    color: #6b4e00;
+    letter-spacing: 0.02em;
+  }
+  .pointlife-headline .main {
+    display: block;
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+  .pointlife-headline .main .hl {
+    color: var(--docomo-red);
+    background: linear-gradient(transparent 62%, var(--accent-yellow) 62%);
+    padding: 0 2px;
+  }
+  .charge-headline .small {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 4px;
+    color: var(--charge-blue-deep);
+    letter-spacing: 0.02em;
+  }
+  .charge-headline .main {
+    display: block;
+    font-size: 28px;
+    line-height: 1.2;
+    color: var(--charge-blue-deep);
+    letter-spacing: -0.01em;
+  }
+  .pointlife-desc, .charge-desc {
+    font-size: 12px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+  .pointlife-visual, .charge-visual {
+    flex: 0 0 84px;
+    width: 84px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .pointlife-visual {
+    background: white;
+    border: 1.5px dashed #c5a04b;
+    border-radius: 10px;
+    color: #8a6b2f;
+    font-size: 10px;
+    text-align: center;
+    line-height: 1.4;
+    padding: 4px;
+  }
+  .charge-visual img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
+  }
+  .charge-visual.placeholder {
+    background: white;
+    border: 1.5px dashed #5ab3c4;
+    border-radius: 10px;
+    color: #0077b6;
+    font-size: 10px;
+    text-align: center;
+    line-height: 1.4;
+    padding: 4px;
+  }
+
+  /* ====== FV 価格ブロック ====== */
+  .fv-price-block {
+    background: white;
+    border-radius: 14px;
+    padding: 16px 16px 14px;
+    margin-bottom: 14px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    text-align: center;
+  }
+  .fv-price-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .fv-price-block .fv-price-num {
+    font-family: 'Anton', sans-serif;
+    font-size: 52px;
+    font-weight: 900;
+    color: var(--docomo-red);
+    line-height: 1;
+    letter-spacing: 0.04em;
+  }
+
+  /* ====== FV 3アイコン（ポイ活連動版） ====== */
+  .fv-3icons-head {
+    font-size: 14px;
+    font-weight: 900;
+    color: var(--ink);
+    text-align: center;
+    margin: 22px 0 10px;
+    letter-spacing: 0.02em;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+  }
+  .fv-3icons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+  .fv-3icon {
+    background: white;
+    border-radius: 10px;
+    padding: 12px 6px 10px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    border-top: 3px solid;
+  }
+  .fv-3icon.walk { border-top-color: #4caf50; }
+  .fv-3icon.dpay { border-top-color: #e65100; }
+  .fv-3icon.amazon { border-top-color: var(--docomo-red); }
+  .fv-3icon-emoji {
+    font-size: 26px;
+    line-height: 1;
+  }
+  .fv-3icon-label {
+    font-family: var(--font-jp-body);
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+  .fv-3icon-num {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 13px;
+    font-weight: 900;
+    line-height: 1;
+    margin-top: 2px;
+  }
+  .fv-3icon.walk .fv-3icon-num { color: #2e7d32; }
+  .fv-3icon.dpay .fv-3icon-num { color: #e65100; }
+  .fv-3icon.amazon .fv-3icon-num { color: var(--docomo-red); }
+
+  /* ====== ポイ活セクション ====== */
+  .pointlife-section {
+    background: linear-gradient(180deg, #fffaf3 0%, #fff5e6 100%);
+    padding: 56px 24px;
+  }
+  .pl-lead {
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-bottom: 28px;
+    line-height: 1.8;
+  }
+  .pl-axis {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    margin-bottom: 20px;
+  }
+  .pl-axis-head {
+    padding: 18px 20px 16px;
+    color: white;
+    position: relative;
+  }
+  .pl-axis-head.walk { background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%); }
+  .pl-axis-head.net { background: linear-gradient(135deg, #ff9800 0%, #e65100 100%); }
+  .pl-axis-head.street { background: linear-gradient(135deg, #cc0033 0%, #8b0023 100%); }
+  .pl-axis-head.lucky { background: linear-gradient(135deg, #9c27b0 0%, #6a1b9a 100%); }
+  .pl-axis-icon-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 4px;
+  }
+  .pl-axis-emoji {
+    font-size: 32px;
+    line-height: 1;
+    width: 48px;
+    height: 48px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  }
+  .pl-axis-title {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 1.3;
+    color: white;
+    letter-spacing: 0.02em;
+  }
+  .pl-axis-body {
+    padding: 20px 22px 22px;
+  }
+  .pl-walk-feature {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    margin-bottom: 14px;
+  }
+  .pl-walk-feature-img {
+    flex: 0 0 96px;
+    width: 96px;
+    height: 140px;
+    background: #f0f4ee;
+    border: 1.5px dashed #b0c5a8;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b8060;
+    font-size: 10px;
+    text-align: center;
+    line-height: 1.4;
+    padding: 6px;
+  }
+  .pl-walk-feature-text {
+    flex: 1;
+    min-width: 0;
+  }
+  .pl-walk-headline {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 18px;
+    font-weight: 900;
+    color: var(--ink);
+    line-height: 1.35;
+    margin-bottom: 8px;
+  }
+  .pl-walk-headline .hl {
+    color: #2e7d32;
+  }
+  .pl-walk-desc {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+  .pl-walk-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 4px;
+    margin-bottom: 14px;
+  }
+  .pl-walk-stat {
+    background: #f3f9f1;
+    border: 1.5px solid #c5e0bf;
+    border-radius: 10px;
+    padding: 10px 12px;
+    text-align: center;
+  }
+  .pl-walk-stat-label {
+    font-size: 11px;
+    color: #2e7d32;
+    font-weight: 700;
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+  .pl-walk-stat-value {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: #1b5e20;
+    line-height: 1;
+  }
+  .pl-walk-stat-value .small {
+    font-size: 13px;
+    margin-left: 2px;
+  }
+  .pl-perks {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .pl-perk {
+    display: flex;
+    gap: 12px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: flex-start;
+  }
+  .pl-perk:first-child { padding-top: 0; }
+  .pl-perk:last-child { border-bottom: none; padding-bottom: 0; }
+  .pl-perk-icon {
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+  .pl-perk-icon.amazon { background: #fff4e6; color: #e65100; }
+  .pl-perk-icon.shop { background: #fff4e6; color: #e65100; }
+  .pl-perk-icon.dpay-100 { background: #fff4e6; color: #e65100; }
+  .pl-perk-icon.dpay-700 { background: #fff4e6; color: #e65100; }
+  .pl-perk-icon.lucky-conv { background: #f3e5f5; color: #6a1b9a; }
+  .pl-perk-icon.lucky-friday { background: #f3e5f5; color: #6a1b9a; }
+  .pl-perk-body { flex: 1; min-width: 0; }
+  .pl-perk-title {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 15px;
+    font-weight: 900;
+    color: var(--ink);
+    margin-bottom: 4px;
+    line-height: 1.4;
+  }
+  .pl-perk-title .hl-orange { color: #e65100; }
+  .pl-perk-title .hl-red { color: var(--docomo-red); }
+  .pl-perk-title .hl-purple { color: #6a1b9a; }
+  .pl-perk-desc {
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    line-height: 1.65;
+  }
+  .pl-perk-desc strong {
+    color: var(--ink);
+    font-weight: 700;
+  }
+  .pl-note {
+    font-size: 10.5px;
+    color: #888;
+    line-height: 1.7;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--border);
+  }
+  .pl-legal {
+    font-size: 10px;
+    color: #999;
+    line-height: 1.7;
+    margin-top: 20px;
+    padding: 0 4px;
+  }
+
+  /* ====== lineup V2: 3カード構成 ====== */
+  .lineup-v2 .lineup-grid {
+    display: grid;
+    gap: 20px;
+    margin-top: 8px;
+  }
+  .lineup-v2-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  }
+  .lineup-v2-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 22px;
+    color: white;
+  }
+  .lineup-v2-head.coupon { background: var(--docomo-red); }
+  .lineup-v2-head.apps { background: linear-gradient(135deg, #5b9bd5 0%, #2e75b6 100%); }
+  .lineup-v2-head.entame { background: linear-gradient(135deg, #546e7a 0%, #37474f 100%); }
+  .lineup-v2-emoji {
+    font-size: 26px;
+    line-height: 1;
+    width: 44px;
+    height: 44px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  }
+  .lineup-v2-title {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 19px;
+    font-weight: 900;
+    color: white;
+    letter-spacing: 0.02em;
+  }
+  .lineup-v2-body {
+    padding: 16px 22px 20px;
+  }
+  .lineup-v2-feature {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .lineup-v2-feature:last-child { border-bottom: none; padding-bottom: 0; }
+  .lineup-v2-feature:first-child { padding-top: 0; }
+  .lineup-v2-feature-title {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 15px;
+    font-weight: 900;
+    color: var(--ink);
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+  .lineup-v2-feature-text {
+    font-family: var(--font-jp-body);
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+  .lineup-v2-feature-text strong {
+    color: var(--docomo-red);
+    font-weight: 900;
+  }
+  .apps-intro {
+    text-align: center;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px dashed var(--border);
+  }
+  .apps-intro-num {
+    font-family: 'Anton', sans-serif;
+    font-size: 38px;
+    font-weight: 900;
+    color: #2e75b6;
+    line-height: 1;
+    letter-spacing: 0.06em;
+  }
+  .apps-intro-label {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    color: var(--ink);
+    margin-top: 6px;
+    white-space: nowrap;
+  }
+  .apps-intro-sub {
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-top: 6px;
+  }
+  .apps-showcase {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .apps-showcase-item {
+    background: #f5f8fc;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #e0e8f0;
+  }
+  .apps-showcase-img {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    overflow: hidden;
+  }
+  .apps-showcase-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .apps-showcase-label {
+    padding: 8px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #0d47a1;
+    text-align: center;
+    border-top: 1px solid #e0e8f0;
+    background: white;
+  }
+  .apps-list {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--border);
+    font-size: 12px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+  .apps-list strong {
+    color: var(--ink);
+    font-weight: 700;
+  }
+
+  /* ====== FAQ V2 グループラベル ====== */
+  .faq-group-label {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 13px;
+    font-weight: 900;
+    color: var(--docomo-red);
+    margin: 18px 0 10px;
+    padding: 4px 12px;
+    background: white;
+    border-left: 4px solid var(--docomo-red);
+    letter-spacing: 0.02em;
+  }
+  .faq-group-label:first-of-type {
+    margin-top: 0;
+  }
+
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ============ FIRST VIEW (V2 ツイン構造) ============ -->
+  <section class="fv">
+    <div class="fv-inner">
+      <div style="font-family: 'Noto Sans JP', sans-serif; background: #f5f6f8; padding: 20px 16px 24px; box-sizing: border-box;">
+
+        <div class="fv-brand" style="margin-bottom: 14px;"><span class="d">d</span>バリューパス</div>
+
+        <!-- 黄色バッジ -->
+        <div style="position: relative; display: inline-block; margin-bottom: 14px; transform: rotate(-2deg);">
+          <div style="
+            background: linear-gradient(135deg, #ffe600 0%, #ffaa00 50%, #ffe600 100%);
+            background-size: 200% 200%;
+            color: #cc0033;
+            font-size: 17px;
+            font-weight: 900;
+            padding: 8px 18px;
+            border-radius: 6px;
+            letter-spacing: 0.06em;
+            font-family: 'Zen Kaku Gothic New', sans-serif;
+            border: 3px solid #1a1a1a;
+            box-shadow: 4px 4px 0 #1a1a1a, 0 0 20px rgba(255, 230, 0, 0.6);
+            text-shadow: 1px 1px 0 #fff;
+            -webkit-text-stroke: 0.5px #cc0033;
+            animation: pariBadgePulse 1.6s ease-in-out infinite, pariBadgeShine 3s linear infinite;
+          ">
+            ポイ活民に朗報！！
+          </div>
+        </div>
+        <style>
+          @keyframes pariBadgePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.04); }
+          }
+          @keyframes pariBadgeShine {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+          }
+        </style>
+
+        <!-- ============ TWIN STRUCTURE ============ -->
+        <div class="fv-twin">
+
+          <!-- ▼ ポイ活カード -->
+          <div class="twin-card pointlife">
+            <div class="pointlife-inner">
+              <div class="pointlife-text">
+                <div class="pointlife-headline">
+                  <span class="small">dポイントが</span>
+                  <span class="main">毎日<span class="hl">貯まる</span>、<br>ずっと<span class="hl">貯まる</span>。</span>
+                </div>
+                <p class="pointlife-desc">
+                  歩く・買う・当てるで、ポイントが積み上がる。
+                </p>
+              </div>
+              <div class="pointlife-visual">
+                ポイ活<br>ビジュアル<br>placeholder<br>84×100
+              </div>
+            </div>
+          </div>
+
+          <!-- ▼ ＋マーク -->
+          <div class="twin-plus"></div>
+
+          <!-- ▼ ChargeSPOTカード -->
+          <div class="twin-card charge">
+            <div class="charge-inner">
+              <div class="charge-text">
+                <div class="charge-headline">
+                  <span class="small">ChargeSPOTが</span>
+                  <span class="main">借り放題。</span>
+                </div>
+                <p class="charge-desc">
+                  全国約5万5,000台。何度でも0円で利用可能。
+                </p>
+              </div>
+              <div class="charge-visual">
+                <img src="images/mobilebattery.png" alt="ChargeSPOT">
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 価格ブロック -->
+        <div class="fv-price-block">
+          <div class="fv-price-row">
+            <span class="fv-price-label" style="font-size: 14px; font-weight: 900; color: #cc0033; border: 2px solid #cc0033; border-radius: 6px; padding: 6px 8px; line-height: 1; white-space: nowrap;">月額</span>
+            <span class="fv-price-num">550</span>
+            <span class="fv-price-yen" style="font-size: 20px; font-weight: 900; color: #cc0033;">円</span>
+            <span class="fv-price-tax" style="font-size: 11px; font-weight: 700; color: #cc0033; white-space: nowrap;">(税込)</span>
+          </div>
+          <!-- リボン -->
+          <div style="position: relative; display: flex; align-items: center; justify-content: center; margin: 0 16px; overflow: visible;">
+            <div style="position: absolute; left: -10px; top: 0; width: 0; height: 0; border-top: 18px solid transparent; border-bottom: 18px solid transparent; border-right: 10px solid #cc0033;"></div>
+            <div style="background: #cc0033; color: white; text-align: center; padding: 9px 0; font-size: 14px; font-weight: 900; letter-spacing: 0.1em; width: 100%; font-family: 'M PLUS Rounded 1c', 'Noto Sans JP', sans-serif; line-height: 18px;">
+              初回３１日間無料
+            </div>
+            <div style="position: absolute; right: -10px; top: 0; width: 0; height: 0; border-top: 18px solid transparent; border-bottom: 18px solid transparent; border-left: 10px solid #cc0033;"></div>
+          </div>
+        </div>
+
+        <!-- 3アイコン（ポイ活セクション連動） -->
+        <p class="fv-3icons-head">毎日の行動が、dポイントに。</p>
+        <div class="fv-3icons">
+          <div class="fv-3icon walk">
+            <span class="fv-3icon-emoji">🚶</span>
+            <span class="fv-3icon-label">歩いて<br>貯まる</span>
+            <span class="fv-3icon-num">毎日抽選</span>
+          </div>
+          <div class="fv-3icon dpay">
+            <span class="fv-3icon-emoji">💳</span>
+            <span class="fv-3icon-label">d払いで<br>還元</span>
+            <span class="fv-3icon-num">最大100%</span>
+          </div>
+          <div class="fv-3icon amazon">
+            <span class="fv-3icon-emoji">🛒</span>
+            <span class="fv-3icon-label">Amazon<br>でお得</span>
+            <span class="fv-3icon-num">最大5倍</span>
+          </div>
+        </div>
+
+        <div class="fv-cond">
+          <strong>ドコモ回線をお持ちでない方もOK</strong>
+        </div>
+
+        <a href="#" class="fv-cta" id="openModal" style="margin-bottom: 24px;">今すぐ申し込む</a>
+
+        <!-- ===== さらにエントリーセクション ===== -->
+        <div style="background: #cc0033; padding: 20px 16px; margin-top: 8px;">
+
+          <div style="text-align: center; color: white; font-size: 18px; font-weight: 900; margin-bottom: 16px; letter-spacing: 0.02em;">
+            ＼ さらにエントリーで実質2〜3ヶ月無料！ ／
+          </div>
+
+          <div style="display: flex; gap: 10px;">
+
+            <!-- 誰でも2カ月 -->
+            <div style="flex: 1; background: #f9e8e8; border-radius: 12px; padding: 12px 8px;">
+              <div style="display: inline-block; border: 1.5px solid #cc0033; border-radius: 20px; padding: 2px 10px; font-size: 10px; font-weight: 700; color: #cc0033; margin-bottom: 8px;">誰でも</div>
+              <div style="text-align: center;">
+                <span style="font-size: 48px; font-weight: 900; color: #cc0033; line-height: 1;" class="entry-num">2</span><span style="font-size: 18px; font-weight: 900; color: #cc0033;" class="entry-text">カ月実質無料</span>
+              </div>
+              <div style="text-align: center; font-size: 11px; color: #555; margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 3px; flex-wrap: wrap;">
+                初回31日間無料 ＋
+                <span style="display:inline-flex; align-items:center; gap:2px;">
+                  <span style="background: #d4a017; color: white; border-radius: 50%; width: 16px; height: 16px; display:inline-flex; align-items:center; justify-content:center; font-size:9px; font-weight:900;">P</span>
+                  <span style="font-weight:700;">550pt</span>
+                </span>
+              </div>
+            </div>
+
+            <!-- 対象プラン3カ月 -->
+            <div style="flex: 1; background: #f9e8e8; border-radius: 12px; padding: 12px 8px;">
+              <div style="display: inline-block; border: 1.5px solid #cc0033; border-radius: 20px; padding: 2px 10px; font-size: 10px; font-weight: 700; color: #cc0033; margin-bottom: 8px;">対象プランなら</div>
+              <div style="text-align: center;">
+                <span style="font-size: 48px; font-weight: 900; color: #c8960c; line-height: 1;" class="entry-num">3</span><span style="font-size: 18px; font-weight: 900; color: #c8960c;" class="entry-text">カ月実質無料</span>
+              </div>
+              <div style="text-align: center; font-size: 11px; color: #555; margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 3px; flex-wrap: wrap;">
+                初回31日間無料 ＋
+                <span style="display:inline-flex; align-items:center; gap:2px;">
+                  <span style="background: #d4a017; color: white; border-radius: 50%; width: 16px; height: 16px; display:inline-flex; align-items:center; justify-content:center; font-size:9px; font-weight:900;">P</span>
+                  <span style="font-weight:700;">550pt</span>
+                </span>
+                ＋
+                <span style="display:inline-flex; align-items:center; gap:2px;">
+                  <span style="background: #d4a017; color: white; border-radius: 50%; width: 16px; height: 16px; display:inline-flex; align-items:center; justify-content:center; font-size:9px; font-weight:900;">P</span>
+                  <span style="font-weight:700;">550pt</span>
+                </span>
+              </div>
+            </div>
+
+          </div>
+
+          <div style="text-align: center; color: rgba(255,255,255,0.85); font-size: 11px; margin-top: 12px; line-height: 1.6;">
+            要エントリー／還元はdポイント（期間・用途限定）
+          </div>
+          <div style="text-align: center; margin-top: 8px;">
+            <a href="#apply" style="color: white; font-size: 15px; font-weight: 700; text-decoration: underline; letter-spacing: 0.02em;">詳細はページ下方へ ▼</a>
+          </div>
+
+        </div>
+        <!-- ===== END さらにエントリーセクション ===== -->
+
+        <p class="fv-cta-note">初回31日間無料 ※31日経過後は自動継続となり、ドコモ以外の方はその月から1カ月分の料金（月額税込550円）がかかります。</p>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ POINTLIFE (V2 新設) ============ -->
+  <section class="pointlife-section">
+    <span class="section-label">dポイントが、毎日貯まる</span>
+    <h2 class="section-title">
+      あなたの日常が、<br>
+      そのまま<span style="color: var(--docomo-red);">ポイ活</span>になる。
+    </h2>
+    <p class="pl-lead">
+      歩く・買う・当てる。<br>
+      いつもの行動が、dポイントに変わる仕組みです。
+    </p>
+
+    <!-- ▼ 軸1：歩いて貯める -->
+    <div class="pl-axis">
+      <div class="pl-axis-head walk">
+        <div class="pl-axis-icon-wrap">
+          <div class="pl-axis-emoji">🚶</div>
+          <div class="pl-axis-title">歩いて貯める</div>
+        </div>
+      </div>
+      <div class="pl-axis-body">
+        <div class="pl-walk-feature">
+          <div class="pl-walk-feature-img">
+            歩数計アプリ<br>スクリーンショット<br>placeholder
+          </div>
+          <div class="pl-walk-feature-text">
+            <div class="pl-walk-headline">
+              歩くだけで、<br>
+              <span class="hl">毎日dポイント抽選</span>。
+            </div>
+            <p class="pl-walk-desc">
+              1日4,000歩で抽選参加権ゲット。「楽しくウォーキング歩数計 for dバリューパス」アプリで、毎日のウォーキングがそのままポイ活に。
+            </p>
+          </div>
+        </div>
+
+        <div class="pl-walk-stats">
+          <div class="pl-walk-stat">
+            <div class="pl-walk-stat-label">毎月最大</div>
+            <div class="pl-walk-stat-value">13<span class="small">回</span></div>
+          </div>
+          <div class="pl-walk-stat">
+            <div class="pl-walk-stat-label">1回あたり最大</div>
+            <div class="pl-walk-stat-value">1,000<span class="small">pt</span></div>
+          </div>
+        </div>
+
+        <p class="pl-note">
+          ※抽選。1日4,000歩の達成で参加権を獲得、月最大13回まで参加可能。dポイント（期間・用途限定）。「楽しくウォーキング歩数計 for dバリューパス」は<strong style="color:#666;">iOS端末のみ</strong>対応。
+        </p>
+      </div>
+    </div>
+
+    <!-- ▼ 軸2：街で買って貯める（オレンジ位置） -->
+    <div class="pl-axis">
+      <div class="pl-axis-head net">
+        <div class="pl-axis-icon-wrap">
+          <div class="pl-axis-emoji">💳</div>
+          <div class="pl-axis-title">街で買って貯める</div>
+        </div>
+      </div>
+      <div class="pl-axis-body">
+        <ul class="pl-perks">
+          <li class="pl-perk">
+            <div class="pl-perk-icon dpay-100">💯</div>
+            <div class="pl-perk-body">
+              <div class="pl-perk-title">
+                d払いで<span class="hl-orange">最大100%還元</span>
+              </div>
+              <p class="pl-perk-desc">
+                dバリューパス契約者限定。d払い加盟店で200円以上の決済をすると、<strong>抽選で最大100%還元</strong>。ハズレなし抽選、要エントリー。
+              </p>
+            </div>
+          </li>
+          <li class="pl-perk">
+            <div class="pl-perk-icon dpay-700">📱</div>
+            <div class="pl-perk-body">
+              <div class="pl-perk-title">d払いで<span class="hl-orange">最大700pt</span>抽選</div>
+              <p class="pl-perk-desc">
+                毎月エントリー＋200円以上のd払い決済で、<strong>抽選で最大700pt</strong>還元。コンビニだけでなく街のお店でも対象。
+              </p>
+            </div>
+          </li>
+        </ul>
+
+        <p class="pl-note">
+          ※抽選。dポイント（期間・用途限定）。100%還元は決済ごと上限700pt。要エントリー。キャンペーンは予告なく終了する場合があります。
+        </p>
+      </div>
+    </div>
+
+    <!-- ▼ 軸3：ネットで買って貯める（赤位置） -->
+    <div class="pl-axis">
+      <div class="pl-axis-head street">
+        <div class="pl-axis-icon-wrap">
+          <div class="pl-axis-emoji">🛒</div>
+          <div class="pl-axis-title">ネットで買って貯める</div>
+        </div>
+      </div>
+      <div class="pl-axis-body">
+        <ul class="pl-perks">
+          <li class="pl-perk">
+            <div class="pl-perk-icon amazon">📦</div>
+            <div class="pl-perk-body">
+              <div class="pl-perk-title">Amazonで<span class="hl-red">最大5倍還元</span></div>
+              <p class="pl-perk-desc">
+                毎月5日・6日発送のお買い物で、dポイントが<strong>最大5倍</strong>。dバリューパス契約で3倍、ドコモ経由のAmazonプライム会員なら5倍還元。
+              </p>
+            </div>
+          </li>
+          <li class="pl-perk">
+            <div class="pl-perk-icon shop">🎁</div>
+            <div class="pl-perk-body">
+              <div class="pl-perk-title">dショッピングで<span class="hl-red">最大600pt/月</span></div>
+              <p class="pl-perk-desc">
+                通常進呈分に加えて<strong>月最大600pt</strong>還元。さらに翌月使える<strong>600円OFFクーポン</strong>付き。
+              </p>
+            </div>
+          </li>
+        </ul>
+
+        <p class="pl-note">
+          ※詳細条件あり。dポイント（期間・用途限定）。Amazon特典の倍率はご契約状況により異なります。
+        </p>
+      </div>
+    </div>
+
+    <!-- ▼ 軸4：毎日抽選で貯める（紫位置） -->
+    <div class="pl-axis">
+      <div class="pl-axis-head lucky">
+        <div class="pl-axis-icon-wrap">
+          <div class="pl-axis-emoji">🎯</div>
+          <div class="pl-axis-title">毎日抽選で貯める</div>
+        </div>
+      </div>
+      <div class="pl-axis-body">
+        <ul class="pl-perks">
+          <li class="pl-perk">
+            <div class="pl-perk-icon lucky-conv">🎫</div>
+            <div class="pl-perk-body">
+              <div class="pl-perk-title">デイリーチャンスで<span class="hl-purple">最大1,500pt</span></div>
+              <p class="pl-perk-desc">
+                大手コンビニ3社のクーポンが<strong>毎日抽選で当たる</strong>。dポイント（期間・用途限定）が最低1pt、<strong>最大1,500pt</strong>あたる抽選にも毎日参加できます。
+              </p>
+            </div>
+          </li>
+          <li class="pl-perk">
+            <div class="pl-perk-icon lucky-friday">🎁</div>
+            <div class="pl-perk-body">
+              <div class="pl-perk-title">金曜限定<span class="hl-purple">10万本プレゼント</span></div>
+              <p class="pl-perk-desc">
+                毎週金曜限定で、コンビニの人気商品が<strong>10万人</strong>にその場で当たる大型企画。
+              </p>
+            </div>
+          </li>
+        </ul>
+
+        <p class="pl-note">
+          ※抽選。dポイント（期間・用途限定）。詳細条件あり。
+        </p>
+      </div>
+    </div>
+
+    <p class="pl-legal">
+      ※Amazon、Amazon.co.jpおよびそれらのロゴはAmazon.com, Inc.またはその関連会社の商標です。<br>
+      ※d払い、dポイント、dショッピングはNTTドコモの登録商標です。
+    </p>
+  </section>
+
+  <!-- ============ BATTERY ============ -->
+  <section class="battery" style="padding-top: 12px;">
+    <span class="section-label">人気のChargeSPOTが借り放題</span>
+    <p class="battery-service-desc" style="font-size: 12px; color: #666; text-align: center; margin: 6px 0 0;">ChargeSPOTはモバイルバッテリーのレンタルサービスです。</p>
+
+    <div style="display: flex; align-items: center; gap: 18px; margin: 16px 0 16px;">
+      <div style="flex: 0 0 35%; max-width: 35%;">
+        <img src="images/mobilebattery.png" style="width:100%; height:auto; display:block;">
+      </div>
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 10px;">
+        <div style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: #1a1a1a; border: 1.5px solid #00b4d8; border-radius: 8px; padding: 6px 12px;">
+          <span style="font-size: 18px;">📍</span>全国約5万5,000台
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: #1a1a1a; border: 1.5px solid #00b4d8; border-radius: 8px; padding: 6px 12px;">
+          <span style="font-size: 18px;">♾️</span>何度でも0円
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: #1a1a1a; border: 1.5px solid #00b4d8; border-radius: 8px; padding: 6px 12px;">
+          <span style="font-size: 18px;">👑</span>ドコモ独占
+        </div>
+      </div>
+    </div>
+
+    <div class="battery-calc">
+      <div class="battery-calc-head">6時間以上のレンタルで<br><span class="hl2">月額550円の元が取れる！</span><br><span style="font-size:12px; font-weight:600; color:#555;">何度でも0円だから気兼ねなく借りれます。</span></div>
+    </div>
+
+    <div class="price-table">
+      <div class="price-table-head">
+        <div>利用時間</div>
+        <div>通常料金</div>
+        <div>dバリューパス</div>
+      </div>
+      <div class="price-row"><div class="time">〜30分</div><div class="normal">165円</div><div class="member">0円</div></div>
+      <div class="price-row"><div class="time">30分〜1時間</div><div class="normal">330円</div><div class="member">0円</div></div>
+      <div class="price-row"><div class="time">1〜3時間</div><div class="normal">430円</div><div class="member">0円</div></div>
+      <div class="price-row"><div class="time">3〜6時間</div><div class="normal">500円</div><div class="member">0円</div></div>
+      <div class="price-row highlight"><div class="time">6〜12時間</div><div class="normal">570円</div><div class="member">0円</div></div>
+      <div class="price-row highlight"><div class="time">12〜24時間</div><div class="normal">640円</div><div class="member">0円</div></div>
+    </div>
+
+    <p class="battery-note">※一部のテーマパーク、スタジアム、大学、医療機関など、通常とは異なる料金が設定されている場所では、使い放題が適用されません。</p>
+  </section>
+
+  <!-- ============ SIMULATION ============ -->
+  <section class="sim">
+    <span class="section-label">1日のお得シミュレーション</span>
+    <h2 class="section-title">あなたなら、いくらお得？</h2>
+    <img src="images/usecase.jpg" style="width:100%; height:auto; display:block; margin-top: 16px;">
+    <div class="sim-killer">
+      <div style="display:flex; align-items:center; gap:20px; justify-content:center;">
+        <img src="images/coins.png" style="width:48px; height:auto; flex-shrink:0;">
+        <span>使えば使うほどお得！<br>1ヶ月だとどのくらいお得に？</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LINEUP (V2 3カード構成) ============ -->
+  <section class="lineup lineup-v2">
+    <span class="section-label">特典ラインアップ</span>
+    <h2 class="section-title" style="margin-bottom: 8px;">
+      もっと<span style="color: var(--docomo-red);">お得</span>に、<br>
+      もっと<span style="color: var(--docomo-red);">便利</span>に。
+    </h2>
+    <p style="font-size: 14px; color: var(--ink-soft); margin-bottom: 28px; line-height: 1.8;">
+      dポイントが貯まる以外にも、毎日の暮らしをもっと豊かにする特典が満載。
+    </p>
+
+    <div class="lineup-grid">
+
+      <!-- ▼ カード1：クーポン特典 -->
+      <div class="lineup-v2-card">
+        <div class="lineup-v2-head coupon">
+          <div class="lineup-v2-emoji">🎫</div>
+          <div class="lineup-v2-title">クーポン特典</div>
+        </div>
+        <div class="lineup-v2-body">
+          <div class="lineup-v2-feature">
+            <div class="lineup-v2-feature-title">🎬 映画が最大500円OFF</div>
+            <p class="lineup-v2-feature-text">
+              <strong>全国8割以上の映画館</strong>で使える割引クーポン。気軽に映画を楽しめます。
+            </p>
+          </div>
+          <div class="lineup-v2-feature">
+            <div class="lineup-v2-feature-title">🍽 飲食・ショッピング900種類以上</div>
+            <p class="lineup-v2-feature-text">
+              人気飲食チェーンやショッピングで使えるクーポンが<strong>900種類以上</strong>。
+            </p>
+          </div>
+          <div class="lineup-v2-feature">
+            <div class="lineup-v2-feature-title">✈️ エアトリで最大40,000円OFF</div>
+            <p class="lineup-v2-feature-text">
+              国内航空券＋ホテルのセット予約で、ご利用金額に応じて<strong>最大40,000円</strong>の割引。旅行の計画にもお得。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ▼ カード2：有料級アプリ -->
+      <div class="lineup-v2-card">
+        <div class="lineup-v2-head apps">
+          <div class="lineup-v2-emoji">📱</div>
+          <div class="lineup-v2-title">有料級アプリ使い放題</div>
+        </div>
+        <div class="lineup-v2-body">
+          <div class="apps-intro">
+            <div style="display:flex; align-items:baseline; justify-content:center; gap:6px;">
+              <span class="apps-intro-num">約150</span>
+              <span class="apps-intro-label">のアプリ＆コンテンツ</span>
+            </div>
+            <div class="apps-intro-sub">が使い放題。日常を快適にするアプリが揃っています。</div>
+          </div>
+
+          <div class="apps-showcase">
+            <div class="apps-showcase-item">
+              <div class="apps-showcase-img">
+                <img src="images/navi.png" alt="NAVITIME">
+              </div>
+              <div class="apps-showcase-label">NAVITIME<br>8サービス使い放題</div>
+            </div>
+            <div class="apps-showcase-item">
+              <div class="apps-showcase-img">
+                <img src="images/weather.png" alt="ウェザーニュース">
+              </div>
+              <div class="apps-showcase-label">ウェザーニュース<br>雨雲レーダー60時間</div>
+            </div>
+          </div>
+
+          <div class="apps-list">
+            他にも<strong>歩数計アプリ</strong>、スマホ電池長持ちアプリ、スマホ管理・最適化アプリなど、日常を支える便利アプリが多数。
+          </div>
+        </div>
+      </div>
+
+      <!-- ▼ カード3：エンタメ特典 -->
+      <div class="lineup-v2-card">
+        <div class="lineup-v2-head entame">
+          <div class="lineup-v2-emoji">🎬</div>
+          <div class="lineup-v2-title">エンタメ特典</div>
+        </div>
+        <div class="lineup-v2-body">
+          <div class="lineup-v2-feature">
+            <div class="lineup-v2-feature-title">📚 dブック 最大80%OFF</div>
+            <p class="lineup-v2-feature-text">
+              新規購入なら先着30,000名に<strong>80%OFF</strong>の200円クーポン。電子書籍をおトクに始められます。
+            </p>
+          </div>
+          <div class="lineup-v2-feature">
+            <div class="lineup-v2-feature-title">🎌 dアニメストア 70%OFF</div>
+            <p class="lineup-v2-feature-text">
+              dアニメストアを対象とした<strong>70%OFF</strong>クーポン。アニメ好きにはたまらない特典。
+            </p>
+          </div>
+          <div class="lineup-v2-feature">
+            <div class="lineup-v2-feature-title">🎲 その他エンタメも充実</div>
+            <p class="lineup-v2-feature-text">
+              ドコモスポーツくじで<strong>100円BIG</strong>クーポン、dマガジンで毎月<strong>10pt</strong>還元、dフォトでフォトブック購入時<strong>550pt</strong>還元など。
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ CAMPAIGN ============ -->
+  <section class="campaign" id="apply">
+    <span class="section-label">キャンペーン</span>
+
+    <div class="camp-hero">
+      <div class="camp-hero-base">
+        初回<span class="hl-num">31</span>日間無料<span class="ast">※</span>
+      </div>
+      <div class="camp-hero-base-note">※31日経過後は自動継続となり、ドコモ以外の方はその月から1カ月分の料金（月額税込550円）がかかります。</div>
+
+      <div class="camp-divider">さらにエントリーで実質2〜3ヶ月無料！</div>
+
+      <div style="display: flex; gap: 10px; margin: 12px 0;">
+
+        <!-- 誰でも2カ月 -->
+        <div style="flex: 1; background: #f9e8e8; border-radius: 12px; padding: 12px 8px; text-align: center;">
+          <div style="display: inline-block; border: 1.5px solid #cc0033; border-radius: 20px; padding: 2px 10px; font-size: 10px; font-weight: 700; color: #cc0033; margin-bottom: 8px;">誰でも</div>
+          <div style="text-align: center;">
+            <span style="font-size: 48px; font-weight: 900; color: #cc0033; line-height: 1;" class="entry-num">2</span><span style="font-size: 18px; font-weight: 900; color: #cc0033;" class="entry-text">カ月実質無料</span>
+          </div>
+          <div style="text-align: center; font-size: 11px; color: #555; margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 3px; flex-wrap: wrap;">
+            初回31日間無料 ＋
+            <span style="display:inline-flex; align-items:center; gap:2px;">
+              <span style="background: #d4a017; color: white; border-radius: 50%; width: 16px; height: 16px; display:inline-flex; align-items:center; justify-content:center; font-size:9px; font-weight:900;">P</span>
+              <span style="font-weight:700;">550pt</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- 対象プラン3カ月 -->
+        <div style="flex: 1; background: #f9e8e8; border-radius: 12px; padding: 12px 8px; text-align: center;">
+          <div style="display: inline-block; border: 1.5px solid #cc0033; border-radius: 20px; padding: 2px 10px; font-size: 10px; font-weight: 700; color: #cc0033; margin-bottom: 8px;">対象プランなら</div>
+          <div style="text-align: center;">
+            <span style="font-size: 48px; font-weight: 900; color: #c8960c; line-height: 1;" class="entry-num">3</span><span style="font-size: 18px; font-weight: 900; color: #c8960c;" class="entry-text">カ月実質無料</span>
+          </div>
+          <div style="text-align: center; font-size: 11px; color: #555; margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 3px; flex-wrap: wrap;">
+            初回31日間無料 ＋
+            <span style="display:inline-flex; align-items:center; gap:2px;">
+              <span style="background: #d4a017; color: white; border-radius: 50%; width: 16px; height: 16px; display:inline-flex; align-items:center; justify-content:center; font-size:9px; font-weight:900;">P</span>
+              <span style="font-weight:700;">550pt</span>
+            </span>
+            ＋
+            <span style="display:inline-flex; align-items:center; gap:2px;">
+              <span style="background: #d4a017; color: white; border-radius: 50%; width: 16px; height: 16px; display:inline-flex; align-items:center; justify-content:center; font-size:9px; font-weight:900;">P</span>
+              <span style="font-weight:700;">550pt</span>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="camp-hero-meta">
+        <div class="camp-hero-plans">対象プラン：ドコモMAX・ポイ活MAX・ポイ活20・mini・ahamo</div>
+        <div class="camp-hero-note">
+          要エントリー／還元はdポイント(期間・用途限定)<br>
+          終了時期未定のため、予告なく終了となる場合があります<br>
+          ポイント進呈時期：各対象月の翌月末を予定<br>
+          ポイント有効期限：進呈日を含め90日
+        </div>
+      </div>
+    </div>
+
+    <div class="camp-cond">
+      <strong>ドコモ回線をお持ちでない方もOK</strong>
+    </div>
+    <div style="text-align: center; margin-top: 12px;">
+      <a href="#faq-entry" style="color: white; font-size: 15px; font-weight: 700; text-decoration: underline; letter-spacing: 0.02em;">エントリー方法はこちら ▼</a>
+    </div>
+
+  </section>
+
+  <!-- ============ FAQ (V2 ポイ活向け質問追加) ============ -->
+  <section class="faq">
+    <span class="section-label">よくあるご質問</span>
+
+    <!-- ▼ グループ1：ご利用について -->
+    <div class="faq-group-label">▶ ご利用について</div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q"><span>ドコモユーザーじゃなくても契約できますか？</span></div>
+        <div class="faq-a">はい。ドコモの回線をお持ちでない方もご契約いただけます。どなたでも月額550円(税込)でご利用いただけます。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span>解約はいつでもできますか？</span></div>
+        <div class="faq-a">はい、いつでも解約可能です。解約のタイミングや手続きに関する詳細は、お申し込み後にご確認いただけます。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span>モバイルバッテリー借り放題に回数制限はありますか？</span></div>
+        <div class="faq-a">契約期間中、利用回数の制限なく何度でも0円でご利用いただけます。ただし一部のテーマパーク、スタジアム、大学、医療機関など、通常とは異なる料金が設定されている場所では、使い放題が適用されません。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span>実質無料とはどういう意味ですか？</span></div>
+        <div class="faq-a">初月無料特典とdポイント還元(期間・用途限定)を組み合わせることで、実質的に月額料金を相殺できる仕組みです。対象プランご契約の方は最大3カ月、それ以外の方は最大2カ月が実質無料となります。要エントリー。</div>
+      </div>
+      <div class="faq-item" id="faq-entry">
+        <div class="faq-q"><span>2ヶ月あるいは3ヶ月の実質無料キャンペーンのエントリー方法は？</span></div>
+        <div class="faq-a"><span style="color:#e60012; font-weight:700;">必ずキャンペーンにエントリーする前に当ページからdバリューパスへお申し込みください。</span>先に当ページからお申し込みいただかない場合、新規契約特典が受けられない場合がございます。キャンペーンは、<a href="https://www.sugotoku.docomo.ne.jp/cs/cam/sugotoku/901/cpn20260301.html" target="_blank" style="color:#0066cc; text-decoration:underline;">こちら</a>からエントリーできます。</div>
+      </div>
+    </div>
+
+    <!-- ▼ グループ2：dポイント・ポイ活について -->
+    <div class="faq-group-label">▶ dポイント・ポイ活について</div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q"><span>ahamoや他社回線でもdポイントは貯まりますか？</span></div>
+        <div class="faq-a">はい、dアカウントをお持ちであれば、ahamoや他社回線をご利用の方でもdバリューパスの各種特典でdポイントを貯めることができます。歩数計アプリ、d払い、Amazon、dショッピングなどの還元・抽選はすべてご利用いただけます。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span>歩数計アプリはAndroidでも使えますか？</span></div>
+        <div class="faq-a">「楽しくウォーキング歩数計 for dバリューパス」は<span style="color:#cc0033; font-weight:700;">現在iOS端末のみ対応</span>しております。Android端末ではご利用いただけませんのでご了承ください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span>dポイント（期間・用途限定）とは何ですか？</span></div>
+        <div class="faq-a">キャンペーン等で進呈される<strong>有効期限と利用範囲が限定されたdポイント</strong>です。通常のdポイントと同様にd払いやドコモのサービスでご利用いただけますが、進呈日から一定期間内（多くの場合は<strong>進呈日を含め90日以内</strong>）に利用する必要があります。</div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <div class="footer-links">
+    <a class="footer-link-item" href="https://www.sugotoku.docomo.ne.jp/cs/faq.html" target="_blank">よくある質問・お問い合わせ</a>
+    <a class="footer-link-item" href="https://www.sugotoku.docomo.ne.jp/cs/representation.html" target="_blank">提供事業者に関する表示</a>
+    <a class="footer-link-item" href="https://kaiteki-app.com/gaibusoushin/1.html" target="_blank">お客様のご利用端末からの情報の外部送信</a>
+  </div>
+  <footer>
+    <div class="footer-company">© 株式会社ピアズ</div>
+  </footer>
+
+  <div class="spacer"></div>
+
+  <!-- Sticky CTA -->
+  <div class="sticky-cta" id="stickyCta">
+    <a href="#" id="openModalSticky">今すぐ申し込む</a>
+    <p class="sticky-note">初回31日間無料 ※31日経過後は自動継続となり、ドコモ以外の方はその月から1カ月分の料金（月額税込550円）がかかります。</p>
+  </div>
+
+</div>
+
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.querySelector('.faq-q').addEventListener('click', () => {
+      item.classList.toggle('open');
+    });
+  });
+
+  // Sticky CTA show after scrolling past FV
+  const sticky = document.getElementById('stickyCta');
+  const fv = document.querySelector('.fv');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > fv.offsetHeight) {
+      sticky.classList.add('show');
+    } else {
+      sticky.classList.remove('show');
+    }
+  });
+</script>
+
+
+<script>
+// クーポンアイコンを一つのsrcから共有
+(function() {
+  var src = document.getElementById('fv-coupon-icon');
+  var lineup = document.getElementById('lineup-coupon-icon');
+  if (src && lineup) {
+    lineup.src = src.src;
+  }
+})();
+</script>
+
+<!-- ============ MODAL ============ -->
+<div id="applyModal" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.55); z-index:1000; display:none; align-items:center; justify-content:center;">
+  <div id="modalInner" style="background:white; width:92%; max-width:400px; border-radius:12px; overflow:hidden; position:relative; max-height:92vh; overflow-y:auto; box-shadow:0 8px 32px rgba(0,0,0,0.3);">
+
+    <!-- ヘッダー：水色グラデ -->
+    <div style="background:linear-gradient(180deg,#29b6f6 0%,#26c6da 100%); padding:12px 16px 12px;">
+      <!-- ヘッダーテキスト -->
+      <div style="text-align:center; margin-bottom:16px;">
+        <p style="font-size:15px; font-weight:700; color:white; margin:0 0 8px;">
+          <span style="background:white; color:#e60012; font-weight:900; padding:2px 10px; border-radius:4px; border:2px solid #e60012;">dバリューパス</span>&nbsp;&nbsp;は
+        </p>
+        <p style="font-size:15px; font-weight:700; color:white; margin:0;">NTTドコモのサービスです。</p>
+      </div>
+      <!-- セパレーター -->
+      <div style="border-top:1px solid rgba(255,255,255,0.4); margin:14px 0 12px;"></div>
+      <!-- 注意テキスト -->
+      <p style="font-size:13px; color:white; font-weight:700; margin:0 0 6px; text-align:center;">これより先、<span style="border-bottom:3px dotted #e60012;">NTTドコモの画面</span>に移動します。</p>
+      <p style="font-size:13px; color:white; font-weight:700; margin:0; text-align:center;"><span style="border-bottom:3px dotted #e60012;">dアカウント</span>、または<span style="border-bottom:3px dotted #e60012;">ドコモ回線</span>が必要です。</p>
+    </div>
+
+    <!-- PCセクション（デスクトップのみ） -->
+    <div id="modalPcSection" style="display:none; padding:14px 16px; border-bottom:1px solid #e8e0d0;">
+      <div style="background:#f0ead8; padding:8px 12px; border-radius:6px; margin-bottom:10px; text-align:center;">
+        <p style="font-size:12px; font-weight:700; color:#666; margin:0;">PCをご利用中のドコモ回線のお客様へ</p>
+      </div>
+      <div style="display:flex; align-items:center; gap:12px;">
+        <p style="font-size:12px; color:#333; line-height:1.7; flex:1; margin:0;">携帯でのお申込がスムーズです。右のQRコードを、<strong>携帯のカメラで読み込む</strong>ことで当サイトへアクセスできます。</p>
+        <div style="width:80px; height:80px; flex-shrink:0; border:2px solid #333; display:flex; align-items:center; justify-content:center; font-size:9px; color:#999; text-align:center; border-radius:3px;">QRコード</div>
+      </div>
+    </div>
+
+    <!-- dアカウントなし案内 -->
+    <div style="padding:14px 16px;">
+      <p style="font-size:13px; font-weight:700; color:#333; margin:0 0 10px;"><span style="color:#e60012; font-weight:900; font-size:15px;">⚠</span> dアカウントをお持ちでない場合</p>
+      <p style="font-size:13px; color:#333; line-height:1.8; margin-bottom:10px;">必ず先に
+        <a href="https://id.smt.docomo.ne.jp/cgi8/id/register" target="_blank" style="color:#e60012; text-decoration:none; font-weight:700; border-bottom:2px solid #e60012;">こちら</a>
+        から<strong>dアカウントのご作成</strong>をお願い致します。ご作成後は当ページに戻って手続きを進めてください。</p>
+      <p style="font-size:11px; color:#777; line-height:1.6; margin-bottom:5px;">※dアカウントは、ドコモ回線以外の方もご利用いただけます。</p>
+      <p style="font-size:11px; color:#e60012; font-weight:700; line-height:1.6;">※当ページを離れてdアカウントをご作成されたり、dバリューパスへご契約いただいた場合は、新規契約特典が受けられない場合がございます。</p>
+    </div>
+
+    <!-- 重要ボックス -->
+    <div style="margin: 0 16px 16px; display: flex; align-items: flex-start; gap: 8px;">
+      <span style="background: #e60012; color: white; font-size: 11px; font-weight: 900; padding: 1px 6px; border-radius: 3px; white-space: nowrap; flex-shrink: 0; margin-top: 2px;">重要</span>
+      <span style="font-size: 11px; color: #333; line-height: 1.6;">登録ステップの完了画面に受付番号が表示されますので、画面のスクリーンショットを撮ってください。新規契約特典に申し込む際に必要です。</span>
+    </div>
+
+    <!-- CTAボタン -->
+    <div style="padding:16px 16px 20px; background:linear-gradient(180deg,#e60012 0%,#c0000e 100%);">
+      <a href="#" style="display:block; color:#e60012; text-align:center; padding:16px; border-radius:50px; text-decoration:none; font-weight:900; font-size:17px; letter-spacing:0.08em; background:white; box-shadow:0 4px 12px rgba(0,0,0,0.25); border: none;">
+        初回31日間無料で始める ▶
+      </a>
+      <p style="font-size:10px; color:rgba(255,255,255,0.8); text-align:center; margin-top:10px; line-height:1.5;">初回31日間無料 ※31日経過後は自動継続となり、ドコモ以外の方はその月から1カ月分の料金（月額税込550円）がかかります。</p>
+    </div>
+
+    <!-- 閉じるボタン -->
+    <button id="closeModal" style="position:absolute; top:10px; right:10px; background:white; border:none; color:#e60012; font-size:18px; font-weight:900; width:30px; height:30px; border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 6px rgba(0,0,0,0.2);">×</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  function isDesktop() { return window.innerWidth >= 768; }
+
+  function openModal() {
+    var modal = document.getElementById('applyModal');
+    var pcSection = document.getElementById('modalPcSection');
+    if (pcSection) pcSection.style.display = isDesktop() ? 'block' : 'none';
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('applyModal').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  var btn1 = document.getElementById('openModal');
+  var btn2 = document.getElementById('openModalSticky');
+  var closeBtn = document.getElementById('closeModal');
+  var overlay = document.getElementById('applyModal');
+
+  if (btn1) btn1.addEventListener('click', function(e){ e.preventDefault(); openModal(); });
+  if (btn2) btn2.addEventListener('click', function(e){ e.preventDefault(); openModal(); });
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  if (overlay) overlay.addEventListener('click', function(e){
+    if (e.target === overlay) closeModal();
+  });
+})();
+</script>
+</body>
+</html>
